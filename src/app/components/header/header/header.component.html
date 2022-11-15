@@ -1,0 +1,8 @@
+<div class="header">
+    <div class="header__dropdown">
+        <app-dropdown 
+        *ngFor="let filter of filters | keyvalue" [label]="filter.key" [value]="filter.value">
+        {{log(filter.value)}}
+        </app-dropdown>
+    </div>
+</div>

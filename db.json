@@ -1,0 +1,64 @@
+{
+    "table": [
+        {
+            "id": "1",
+            "status": "success",
+            "image": "assets/images/img1.png",
+            "number": 12345,
+            "description": "Some description",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 8
+        },
+        {
+            "id": "2",
+            "status": "error",
+            "image": "assets/images/img2.png",
+            "number": 123455,
+            "description": "Some description 2",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 7
+        },
+        {
+            "id": "3",
+            "status": "warning",
+            "image": "assets/images/img1.png",
+            "number": 123455,
+            "description": "Some description 3",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 3
+        },
+        {
+            "id": "4",
+            "status": "success",
+            "image": "assets/images/img2.png",
+            "number": 123455,
+            "description": "Some description 4",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 4
+        },
+        {
+            "id": "5",
+            "status": "error",
+            "image": "assets/images/img1.png",
+            "number": 123455,
+            "description": "Some description 5",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 5
+        },
+        {
+            "id": "6",
+            "status": "warning",
+            "image": "assets/images/img2.png",
+            "number": 123455,
+            "description": "Some description 6",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 5
+        }
+    ]
+}

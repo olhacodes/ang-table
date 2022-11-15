@@ -1,0 +1,20 @@
+<table>
+    <tr>
+      <th *ngFor="let th of tableLabels">{{th}}</th>
+    </tr>
+    <tr *ngFor="let td of tableData">
+        <td>
+            <app-radio-button status={{td.status}}></app-radio-button>
+        </td>
+        <td>
+            <img src={{td.image}} alt={{td.description}}>
+        </td>
+        <td>
+            {{td.number}}
+        </td>
+      <td>{{td.description}}</td>
+      <td>{{td.instalDate}}</td>
+      <td>{{td.lastService}}</td>
+      <td>{{td.nbComponents}}</td>
+    </tr>
+</table>
