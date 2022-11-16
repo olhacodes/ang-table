@@ -1,0 +1,27 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/colors.scss';
+
+.header {
+    display: flex;
+    gap: 10%;
+    justify-content: end;
+    margin-bottom: 1.5rem;
+
+    &__dropdown {
+        width: 20%;
+
+        &-label {
+            @include font_bold;
+            color: $grey-color;
+        }
+    }
+}
+
+.ng-select.custom  {
+    padding: 0;
+}
+
+.ng-select.custom, .ng-select-container  {
+    background-color: $white-color
+}
+

@@ -1,8 +1,8 @@
 <table>
-    <tr>
+    <tr class="line">
       <th *ngFor="let th of tableLabels">{{th}}</th>
     </tr>
-    <tr *ngFor="let td of tableData">
+    <tr *ngFor="let td of tableData" class="row">
         <td>
             <app-radio-button status={{td.status}}></app-radio-button>
         </td>
@@ -10,11 +10,13 @@
             <img src={{td.image}} alt={{td.description}}>
         </td>
         <td>
-            {{td.number}}
+            <a class="number" href="">{{td.number}}</a>
         </td>
-      <td>{{td.description}}</td>
+      <td class="description">{{td.description}}</td>
       <td>{{td.instalDate}}</td>
       <td>{{td.lastService}}</td>
-      <td>{{td.nbComponents}}</td>
+      <td>
+        <span class="components">{{td.nbComponents}}</span>
+      </td>
     </tr>
 </table>

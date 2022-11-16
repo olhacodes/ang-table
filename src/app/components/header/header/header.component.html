@@ -1,7 +1,7 @@
 <div class="header">
-    <div class="dropdown" *ngFor="let item of selectItems">
-        <span class="dropdown__label">{{item[0].label | uppercase}}</span>
-        <ng-select [items]="item.slice(1)" bindLabel="name" bindValue="id" [multiple]="false"
+    <div class="header__dropdown" *ngFor="let item of selectItems">
+        <span class="header__dropdown-label">{{item[0].label | uppercase}}</span>
+        <ng-select class="custom" [items]="item" bindLabel="name" bindValue="id" [multiple]="false"
             placeholder="Show All" [(ngModel)]="selectedValue">
         </ng-select>
     </div>

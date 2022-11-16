@@ -10,22 +10,22 @@ export class HeaderComponent implements OnInit {
  
   selectItems = [
       [
-        {label: 'Product type'},
-        { id: 1, name: 'Select All' },
+        {label: 'Product type', name: 'Show All'},
+        { id: 1, name: 'value 1' },
         { id: 2, name: 'Saab' },
         { id: 3, name: 'Opel' },
         { id: 4, name: 'Audi' },
     ],
     [
-      {label: 'Status'},
-      { id: 1, name: 'Select All 2' },
+      {label: 'Status', name: 'Show All'},
+      { id: 1, name: 'value 1' },
       { id: 2, name: 'Saab' },
       { id: 3, name: 'Opel' },
       { id: 4, name: 'Audi' },
   ],
   [
-    {label: 'Category'},
-    { id: 1, name: 'Select All 3' },
+    {label: 'Category', name: 'Show All'},
+    { id: 1, name: 'value 1' },
     { id: 2, name: 'Saab' },
     { id: 3, name: 'Opel' },
     { id: 4, name: 'Audi' },
