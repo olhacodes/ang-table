@@ -6,32 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  selectedValue: number;
- 
-  selectItems = [
-      [
-        {label: 'Product type', name: 'Show All'},
-        { id: 1, name: 'value 1' },
-        { id: 2, name: 'Saab' },
-        { id: 3, name: 'Opel' },
-        { id: 4, name: 'Audi' },
-    ],
-    [
-      {label: 'Status', name: 'Show All'},
-      { id: 1, name: 'value 1' },
-      { id: 2, name: 'Saab' },
-      { id: 3, name: 'Opel' },
-      { id: 4, name: 'Audi' },
+
+filters = {
+  "productType":  [
+    {value: 'steak-0', viewValue: 'Steak 1'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
   ],
-  [
-    {label: 'Category', name: 'Show All'},
-    { id: 1, name: 'value 1' },
-    { id: 2, name: 'Saab' },
-    { id: 3, name: 'Opel' },
-    { id: 4, name: 'Audi' },
+  "status": [
+    {value: 'steak-0', viewValue: 'Steak 2'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
   ],
-  ]
-  
+  "category": [
+    {value: 'steak-0', viewValue: 'Steak 3'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ],
+}
   constructor() { }
 
   ngOnInit(): void {

@@ -58,3 +58,10 @@ img {
     border-radius: 100%;
     color: $white-color;
 }
+
+.more::after {
+    content: '\2807';
+    font-size: 1rem;
+    color: $blue-color;
+    cursor: pointer;
+}

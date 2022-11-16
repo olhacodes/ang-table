@@ -3,7 +3,6 @@
 
 .header {
     display: flex;
-    gap: 10%;
     justify-content: end;
     margin-bottom: 1.5rem;
 
@@ -14,14 +13,34 @@
             @include font_bold;
             color: $grey-color;
         }
+
+        &-item {
+            width: 100%;
+            background-color: $white-color;
+            padding: 0 0.5rem;
+            border-radius: 4rem;
+            max-width: 6.25rem;
+        }
     }
 }
 
-.ng-select.custom  {
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
     padding: 0;
 }
 
-.ng-select.custom, .ng-select-container  {
-    background-color: $white-color
+::ng-deep .mat-form-field-hide-placeholder .mat-select-placeholder {
+    -webkit-text-fill-color: $blue-light-color!important;
+    font-weight: 600;
 }
 
+::ng-deep .mat-select-arrow {
+    color: $blue-color;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-infix {
+    border: 0;
+}

@@ -1,8 +1,12 @@
 <div class="header">
-    <div class="header__dropdown" *ngFor="let item of selectItems">
-        <span class="header__dropdown-label">{{item[0].label | uppercase}}</span>
-        <ng-select class="custom" [items]="item" bindLabel="name" bindValue="id" [multiple]="false"
-            placeholder="Show All" [(ngModel)]="selectedValue">
-        </ng-select>
+    <div class="header__dropdown" *ngFor="let item of filters | keyvalue">
+        <span class="header__dropdown-label">{{item.key | uppercase}}</span>
+        <mat-form-field floatLabel="never" class="header__dropdown-item">
+            <mat-select placeholder="Show All">
+              <mat-option *ngFor="let option of item.value" [value]="option.value">
+                {{option.viewValue}}
+              </mat-option>
+            </mat-select>
+       </mat-form-field>
     </div>
 </div>
