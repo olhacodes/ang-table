@@ -1,5 +1,5 @@
-@import 'src/styles/mixins.scss';
 @import 'src/styles/colors.scss';
+@import 'src/styles/resolutions.scss';
 
 .header {
     display: flex;
@@ -8,10 +8,14 @@
 
     &__dropdown {
         width: 20%;
+        display: flex;
+        flex-direction: column;
 
         &-label {
-            @include font_bold;
+            font-size: 0.4rem;
+            font-weight: 700;
             color: $grey-color;
+            margin-left: 0.4rem;
         }
 
         &-item {
@@ -19,7 +23,8 @@
             background-color: $white-color;
             padding: 0 0.5rem;
             border-radius: 4rem;
-            max-width: 6.25rem;
+            max-width: 4.25rem;
+            margin-top: 0.3rem;
         }
     }
 }
@@ -43,4 +48,15 @@
 
 ::ng-deep .mat-form-field-infix {
     border: 0;
+}
+
+:ng-deep .mat-select-trigger .ng-tns-c84-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: $mobile) {
+    .header {
+        gap: 10%;
+    }
 }
