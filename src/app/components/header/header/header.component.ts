@@ -6,14 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  log(val) { console.log(val); }
-
-  filters = {
-    "productType":  ["Select All", "value 1", 'value 2'],
-    "status": ["Select All", "value 1", 'value 2'],
-    "category": ["Select All", "value 1", 'value 2'],
-  }
+  selectedValue: number;
+ 
+  selectItems = [
+      [
+        {label: 'Product type'},
+        { id: 1, name: 'Select All' },
+        { id: 2, name: 'Saab' },
+        { id: 3, name: 'Opel' },
+        { id: 4, name: 'Audi' },
+    ],
+    [
+      {label: 'Status'},
+      { id: 1, name: 'Select All 2' },
+      { id: 2, name: 'Saab' },
+      { id: 3, name: 'Opel' },
+      { id: 4, name: 'Audi' },
+  ],
+  [
+    {label: 'Category'},
+    { id: 1, name: 'Select All 3' },
+    { id: 2, name: 'Saab' },
+    { id: 3, name: 'Opel' },
+    { id: 4, name: 'Audi' },
+  ],
+  ]
   
   constructor() { }
 
