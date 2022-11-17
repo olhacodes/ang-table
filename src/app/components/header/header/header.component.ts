@@ -7,12 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() label: string;
+  @Input() id: string;
   @Input() filterDropdown: string[];
-  @Input() click: any;
+  @Input() filter: string[];
+  @Input() change: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
 }

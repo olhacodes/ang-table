@@ -1,13 +1,13 @@
 <div class="table__dropdown">
-  <app-header [label]="'Status'" [filterDropdown]="statuses"></app-header>
-<app-header [label]="'Description'" [filterDropdown]="descriptions"></app-header>
+  <app-header [label]="'Status'" [filterDropdown]="statuses" [id]="'status'" (change)="[onFilterStatus('status')]"></app-header>
+  <app-header [label]="'Description'" [id]="'description'" [filterDropdown]="descriptions" (change)="[onFilterStatus('description')]"></app-header>
 </div>
 
 <table class="table">
     <tr class="line">
       <th *ngFor="let th of tableLabels">{{th}}</th>
     </tr>
-    <tr *ngFor="let td of tableData" class="row">
+    <tr *ngFor="let td of filteredTable" class="row">
         <td>
             <app-radio-button status={{td.status}}></app-radio-button>
         </td>

@@ -8,12 +8,3 @@ interface ITable {
     lastService: string;
     nbComponents: number;
 }
-
-interface IState {
-    sortStatus: string;
-    sortDescription: string;
-}
-
-interface IFilterResult {
-	tableData: ITable[];
-}
