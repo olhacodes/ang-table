@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RadioButtonComponent implements OnInit {
   @Input() status: string;
-  mode = true;
   
   constructor() { }
 

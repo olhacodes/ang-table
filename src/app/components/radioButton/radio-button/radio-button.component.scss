@@ -1,11 +1,44 @@
+@import 'src/styles/colors.scss';
+
 .success {
-    accent-color: #10ac26;
+    border: 1.5px solid #10ac26;
+}
+
+.success .radio-button__radio {
+    background-color: #10ac26;
 }
 
 .error {
-    accent-color: #ff5555;
+    border: 1.5px solid #ff5555;
+}
+
+.error .radio-button__radio {
+    background-color: #ff5555;
 }
 
 .warning {
-    accent-color: #f8bf62;
+    border: 1.5px solid #f8bf62;
+}
+
+.warning .radio-button__radio {
+    background-color: #f8bf62;
+}
+
+.radio-button {
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    position: relative;
+
+    &__radio {
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
 }
