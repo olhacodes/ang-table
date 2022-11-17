@@ -1,4 +1,9 @@
-<table>
+<div class="table__dropdown">
+  <app-header [label]="'Status'" [filterDropdown]="statuses"></app-header>
+<app-header [label]="'Description'" [filterDropdown]="descriptions"></app-header>
+</div>
+
+<table class="table">
     <tr class="line">
       <th *ngFor="let th of tableLabels">{{th}}</th>
     </tr>

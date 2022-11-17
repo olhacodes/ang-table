@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TableService } from 'src/app/services/table.service';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -13,10 +13,17 @@ export class TableComponent implements OnInit {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
+
+  statuses: string[];
+  descriptions: string[];
   
   ngOnInit() {
-    this.tableSubscription = this.tableService.getTableData().subscribe(data => {
-      this.tableData = data;
+    this.tableSubscription = this.tableService.getTableData()
+    .subscribe((data) => (this.tableData = data));
+
+    this.tableService.getTableData().subscribe(data => {
+      this.statuses = [...new Set(data.map(item => item.status))]
+      this.descriptions = [...new Set(data.map(item => item.description))]
     })
   }
 

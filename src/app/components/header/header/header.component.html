@@ -1,14 +1,8 @@
 <div class="header">
   <div class="header__dropdown">
-    <span class="header__dropdown-label">Status</span>
+    <span class="header__dropdown-label">{{label}}</span>
     <select class="selectpicker header__dropdown-item">
-      <option *ngFor="let status of statuses" value={{status}}>{{status}}</option>
-    </select>
-  </div>
-  <div class="header__dropdown">
-    <span class="header__dropdown-label">Description</span>
-    <select class="selectpicker header__dropdown-item">
-      <option *ngFor="let description of descriptions" value={{description}}>{{description}}</option>
+      <option (click)="click(filter)" *ngFor="let filter of filterDropdown" value={{filter}}>{{filter}}</option>
     </select>
   </div>
 </div>

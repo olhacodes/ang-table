@@ -2,7 +2,7 @@
 
 $table-border-color: rgb(240, 237, 237);
 
-table {
+.table {
     text-align: left;
     overflow: hidden;
     width: 100%;
@@ -13,6 +13,13 @@ table {
     background-color: $white-color;
     border: 0.00654rem solid $table-border-color;
     border-radius: 0.5rem;
+
+    &__dropdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 5%;
+    }
 }
 
 th {

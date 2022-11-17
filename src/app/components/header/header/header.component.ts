@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { TableService } from 'src/app/services/table.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +6,13 @@ import { TableService } from 'src/app/services/table.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  statuses: string[];
-  descriptions: string[];
+  @Input() label: string;
+  @Input() filterDropdown: string[];
+  @Input() click: any;
 
-  constructor(private tableService: TableService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.tableService.getTableData().subscribe(data => {
-    this.statuses = [...new Set(data.map(item => item.status))]
-    this.descriptions = [...new Set(data.map(item => item.description))]
-    })
   }
+
 }
