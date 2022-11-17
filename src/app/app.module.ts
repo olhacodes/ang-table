@@ -4,8 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,9 +24,7 @@ import { RadioButtonComponent } from './components/radioButton/radio-button/radi
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    RouterModule,
-    MatSelectModule,
-    MatFormFieldModule
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

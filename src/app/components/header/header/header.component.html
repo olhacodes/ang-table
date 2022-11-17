@@ -1,12 +1,14 @@
 <div class="header">
-    <div class="header__dropdown" *ngFor="let item of filters | keyvalue">
-        <span class="header__dropdown-label">{{item.key | uppercase}}</span>
-        <mat-form-field floatLabel="never" class="header__dropdown-item">
-            <mat-select placeholder="Show All">
-              <mat-option *ngFor="let option of item.value" [value]="option.value">
-                {{option.viewValue}}
-              </mat-option>
-            </mat-select>
-       </mat-form-field>
-    </div>
+  <div class="header__dropdown">
+    <span class="header__dropdown-label">Status</span>
+    <select class="selectpicker header__dropdown-item">
+      <option *ngFor="let status of statuses" value={{status}}>{{status}}</option>
+    </select>
+  </div>
+  <div class="header__dropdown">
+    <span class="header__dropdown-label">Description</span>
+    <select class="selectpicker header__dropdown-item">
+      <option *ngFor="let description of descriptions" value={{description}}>{{description}}</option>
+    </select>
+  </div>
 </div>

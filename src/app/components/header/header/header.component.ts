@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TableService } from 'src/app/services/table.service';
 
 @Component({
   selector: 'app-header',
@@ -6,27 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  statuses: string[];
+  descriptions: string[];
 
-filters = {
-  "productType":  [
-    {value: 'steak-0', viewValue: 'Steak 1'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ],
-  "status": [
-    {value: 'steak-0', viewValue: 'Steak 2'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ],
-  "category": [
-    {value: 'steak-0', viewValue: 'Steak 3'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ],
-}
-  constructor() { }
+  constructor(private tableService: TableService) { }
 
   ngOnInit(): void {
+    this.tableService.getTableData().subscribe(data => {
+    this.statuses = [...new Set(data.map(item => item.status))]
+    this.descriptions = [...new Set(data.map(item => item.description))]
+    })
   }
-
 }
