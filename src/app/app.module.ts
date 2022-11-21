@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { TableComponent } from './components/table/table.component';
-import { RadioButtonComponent } from './components/radioButton/radio-button/radio-button.component';
+import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [

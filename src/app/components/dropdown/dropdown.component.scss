@@ -1,6 +1,8 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/resolutions.scss';
 
+$dropdown-width: 6.25rem;
+
 .dropdown {
     margin-bottom: 1.5rem;
 
@@ -10,19 +12,21 @@
     }
 
     &__label {
-        font-weight: 700;
         color: $grey-color;
-        margin-left: 0.4rem;
+        font-size: 0.5625rem;
+        line-height: 0.6875rem;
+        margin-bottom: 0.3125rem;
+        padding-left: 0.625rem;
     } 
     
     &__item {
         background-color: $white-color;
-        border-radius: 4rem;
-        max-width: fit-content;
-        margin-top: 0.3rem;
+        border-radius: 1.5rem;
+        padding: 0.3125rem 0.3125rem 0.3125rem 0.625rem;
+        width: $dropdown-width;
+        font-size: 0.8125rem;
         color: $blue-color;
-        font-weight: 600;
-        font-size: 0.6rem;
+        font-weight: 700;
         border-color: transparent;
     }
 }

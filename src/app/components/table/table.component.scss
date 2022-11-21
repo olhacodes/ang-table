@@ -1,15 +1,17 @@
 @import 'src/styles/colors.scss';
+@import 'src/styles/variables.scss';
 
 $table-border-color: rgb(240, 237, 237);
+$image-width: 2.5rem;
+$wide-row: 11.25rem;
+$number-icon-width: 0.9375rem;
 
 .table {
     text-align: left;
-    overflow: hidden;
     width: 100%;
-    max-width: 50rem;
     margin: 0 auto;
     display: table;
-    padding: 2rem;
+    padding: 0.8125rem 2.1875rem 2.1875rem;
     background-color: $white-color;
     border: 0.00654rem solid $table-border-color;
     border-radius: 0.5rem;
@@ -18,61 +20,75 @@ $table-border-color: rgb(240, 237, 237);
         display: flex;
         flex-direction: row;
         justify-content: end;
-        gap: 5%;
+        gap: 1.25rem;
+        padding-top: 1.5625rem;
     }
-}
 
-th {
-    color: $grey-light-color;
-}
+    &__label {
+        color: $grey-color;
+        position: relative;
+        &::after {
+            content: '';
+            width: 100%;
+            border-bottom: 0.0625rem solid $grey-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
 
-tr {
-    position: relative;
-}
+        &-item {
+            padding: 0.9375rem 0;
+            font-weight: 400;
+        }
+    }
 
-th td {
-    padding: 1rem;
-    text-align: left;
-}
-
-img {
-    width: 2rem;
-}
-
-.line {
-    font-size: 0.6rem;
+    &__row {
+        position: relative;
     &::after {
         content: '';
         width: 100%;
-        height: 0.654rem;
-        border-bottom: 0.0654rem solid $grey-light-color;
+        border-bottom: $border-dashed;
         position: absolute;
         bottom: 0;
         left: 0;
+    } 
+    
+    > td {
+        padding-top: 0.9375rem;
     }
-}
+    }
+    
+    &__description {
+        width: $wide-row;
+    }
 
-.number {
-    color: $blue-color;
-    font-weight: 700;
-    text-decoration: none;
-}
+    &__image {
+        width: $image-width;
+    }
 
-.description {
-    width: 30%;
-}
+    &__number {
+        color: $blue-color;
+        font-weight: 700;
+        text-decoration: none;
+    }
 
-.components {
-    background-color: $blue-dark-color;
-    padding: 0.0654rem 0.1654rem;
-    border-radius: 100%;
-    color: $white-color;
-    font-size: 0.5rem;
-}
+    &__numberIcon {
+        width: $wide-row;
 
-.more::after {
-    content: '\2807';
-    font-size: 1rem;
-    color: $blue-color;
-    cursor: pointer;
+        &-item {
+            background-color: $blue-color;
+            border-radius: 100%;
+            color: $white-color;
+            font-size: 0.625rem;
+            width: $number-icon-width;
+            text-align: center;
+        }
+    }
+
+    &__action::after {
+        content: '\2807';
+        font-size: 1rem;
+        color: $blue-color;
+        cursor: pointer;
+    }
 }

@@ -4,27 +4,27 @@
 </div>
 
 <table class="table">
-    <tr class="line">
-      <th *ngFor="let th of tableLabels">{{th}}</th>
+    <tr class="table__label">
+      <th class="table__label-item" *ngFor="let label of tableLabels">{{label}}</th>
     </tr>
-    <tr *ngFor="let td of filteredTable" class="row">
+    <tr *ngFor="let row of filteredTable" class="table__row">
         <td>
-            <app-radio-button status={{td.status}}></app-radio-button>
+            <app-radio-button status={{row.status}}></app-radio-button>
         </td>
         <td>
-            <img src={{td.image}} alt={{td.description}}>
+            <img class="table__image" src={{row.image}} alt={{row.description}}>
         </td>
         <td>
-            <a class="number" href="">{{td.number}}</a>
+            <a class="table__number" href="">{{row.number}}</a>
         </td>
-      <td class="description">{{td.description}}</td>
-      <td>{{td.instalDate}}</td>
-      <td>{{td.lastService}}</td>
-      <td>
-        <span class="components">{{td.nbComponents}}</span>
+      <td class="table__description">{{row.description}}</td>
+      <td>{{row.instalDate}}</td>
+      <td>{{row.lastService}}</td>
+      <td class="table__numberIcon">
+        <div class="table__numberIcon-item">{{row.nbComponents}}</div>
       </td>
       <td>
-        <div class="more"></div>
+        <div class="table__action"></div>
       </td>
     </tr>
 </table>
