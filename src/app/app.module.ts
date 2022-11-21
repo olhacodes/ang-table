@@ -7,14 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header/header.component';
-import { TableComponent } from './components/table/table/table.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { TableComponent } from './components/table/table.component';
 import { RadioButtonComponent } from './components/radioButton/radio-button/radio-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    DropdownComponent,
     TableComponent,
     RadioButtonComponent
   ],

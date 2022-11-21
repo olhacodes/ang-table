@@ -1,0 +1,34 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/resolutions.scss';
+
+.dropdown {
+    margin-bottom: 1.5rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-weight: 700;
+        color: $grey-color;
+        margin-left: 0.4rem;
+    } 
+    
+    &__item {
+        background-color: $white-color;
+        border-radius: 4rem;
+        max-width: fit-content;
+        margin-top: 0.3rem;
+        color: $blue-color;
+        font-weight: 600;
+        font-size: 0.6rem;
+        border-color: transparent;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .dropdown {
+        gap: 10%;
+    }
+}

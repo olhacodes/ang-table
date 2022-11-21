@@ -1,0 +1,8 @@
+<div class="dropdown">
+  <div class="dropdown__container">
+    <span class="dropdown__label">{{label}}</span>
+    <select id={{id}} (change)="change" class="selectpicker dropdown__item">
+      <option *ngFor="let filter of filterDropdown" value={{filter}}>{{filter}}</option>
+    </select>
+  </div>
+</div>

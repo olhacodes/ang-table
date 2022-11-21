@@ -1,6 +1,6 @@
 <div class="table__dropdown">
-  <app-header [label]="'Status'" [filterDropdown]="statuses" [id]="'status'" (change)="[onFilterStatus('status')]"></app-header>
-  <app-header [label]="'Description'" [id]="'description'" [filterDropdown]="descriptions" (change)="[onFilterStatus('description')]"></app-header>
+  <app-dropdown [label]="'Status'" [filterDropdown]="statuses" [id]="'status'" (change)="[onFilterTable('status')]"></app-dropdown>
+  <app-dropdown [label]="'Description'" [id]="'description'" [filterDropdown]="descriptions" (change)="[onFilterTable('description')]"></app-dropdown>
 </div>
 
 <table class="table">

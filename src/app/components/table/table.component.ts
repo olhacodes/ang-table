@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { TableService } from 'src/app/services/table.service';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -26,13 +27,15 @@ export class TableComponent implements OnInit {
 
       this.statuses = [...new Set(data.map(item => item.status))]
       this.statuses.push('Show All')
+      this.statuses.reverse()
 
       this.descriptions = [...new Set(data.map(item => item.description))]
       this.descriptions.push('Show All')
+      this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
     });
   }
 
-  onFilterStatus(field: string) {
+  onFilterTable(field: string) {
     const filtereValue = (document.getElementById(field) as HTMLInputElement).value;
 
     this.filteredTable =  filtereValue !== 'Show All' ? this.tableData.filter(item =>  field === 'status' ? (item.status ===  filtereValue) : (item.description === filtereValue)) : this.tableData
@@ -43,5 +46,4 @@ export class TableComponent implements OnInit {
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
-
 }

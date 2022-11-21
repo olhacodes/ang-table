@@ -15,6 +15,4 @@ export class TableService {
     this.rowData = this.http.get<ITable[]>(this.URL)
     return this.rowData
   }
-
- 
 }
