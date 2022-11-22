@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { TableService } from 'src/app/services/table.service';
+import { DropdownComponent } from '../dropdown/dropdown.component';
 
 @Component({
   selector: 'app-table',
@@ -10,6 +11,7 @@ import { TableService } from 'src/app/services/table.service';
 })
 export class TableComponent implements OnInit {
   constructor(private tableService: TableService) { }
+  @ViewChild('status') status: DropdownComponent
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
@@ -43,7 +45,10 @@ export class TableComponent implements OnInit {
     return this.filteredTable
   }
 
+
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
 }
+
+//to-do refactor dropdown functionality

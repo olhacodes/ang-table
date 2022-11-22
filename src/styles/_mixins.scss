@@ -1,7 +1,8 @@
 @import 'src/styles/colors.scss';
+@import 'src/styles/variables.scss';
 
 @mixin h4 {
-    color: $grey-light-color;
+    color: $grey-dark-color;
     line-height: 0.8125rem;
     letter-spacing: 0.125rem;
     margin: 0;
@@ -20,4 +21,16 @@ h4 {
 
 .link-number {
     @include link-number;
+}
+
+.border-dashed {
+    position: relative;
+    &::after {
+       content: '';
+        width: 100%;
+        border-bottom: $border-dashed;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 }

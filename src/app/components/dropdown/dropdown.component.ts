@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -9,7 +9,7 @@ export class DropdownComponent implements OnInit {
   @Input() label: string;
   @Input() id: string;
   @Input() filterDropdown: string[];
-  @Input() change: any;
+  @Output() onFilter: any;
 
   constructor() { }
 

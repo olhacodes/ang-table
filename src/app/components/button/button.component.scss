@@ -1,0 +1,16 @@
+@import 'src/styles/colors.scss';
+
+.button {
+    padding: 0.3125rem 0.9375rem;
+    border: none;
+    color: $blue-color;
+    border-radius: 1.625rem;
+}
+
+.primarily {
+    border: 1px solid #0167B9;
+}
+
+.secondary {
+    border: 1px solid red;
+}

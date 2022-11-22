@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-
+  btnClass:string = 'primarily';
   constructor() { }
 
   ngOnInit(): void {
