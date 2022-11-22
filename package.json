@@ -19,11 +19,11 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^13.1.1",
+    "bootstrap": "^5.2.3",
     "json-server": "^0.17.1",
     "ng-bootstrap-select": "^0.5.0",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "rxjs": "~7.5.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.9",
@@ -36,6 +36,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "tslib": "^2.4.1",
     "typescript": "~4.7.2"
   }
 }

@@ -1,0 +1,9 @@
+@import 'src/styles/mixins.scss';
+
+.last-viewed {
+    margin-top: 1.25rem;
+    &__title {
+        padding: 1.25rem 0;
+        text-align: center;
+    }
+}

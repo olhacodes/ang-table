@@ -1,0 +1,19 @@
+@import 'src/styles/colors.scss';
+
+::ng-deep .carousel-control-next-icon, ::ng-deep .carousel-control-prev-icon {
+    background-image: url('../../../assets/images/arrow.svg');
+}
+
+::ng-deep .carousel-control-prev-icon {
+    transform: rotate(180deg);
+}
+
+::ng-deep .carousel-control-next, ::ng-deep .carousel-control-prev {
+    opacity: 1;
+    bottom: -100%;
+}
+
+::ng-deep .carousel-item {
+    display: block;
+}
+  

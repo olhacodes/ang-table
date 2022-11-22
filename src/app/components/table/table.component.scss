@@ -1,12 +1,13 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
 
 $table-border-color: rgb(240, 237, 237);
 $image-width: 2.5rem;
 $wide-row: 11.25rem;
 $number-icon-width: 0.9375rem;
 
-.table {
+.Table {
     text-align: left;
     width: 100%;
     margin: 0 auto;
@@ -14,6 +15,7 @@ $number-icon-width: 0.9375rem;
     padding: 0.8125rem 2.1875rem 2.1875rem;
     background-color: $white-color;
     border-radius: 0.625rem;
+    border-collapse: unset;
 
     &__dropdown {
         display: flex;
@@ -65,14 +67,9 @@ $number-icon-width: 0.9375rem;
         width: $image-width;
     }
 
-    &__number {
-        color: $blue-color;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
     &__numberIcon {
         width: $wide-row;
+        padding: 0;
 
         &-item {
             background-color: $blue-color;

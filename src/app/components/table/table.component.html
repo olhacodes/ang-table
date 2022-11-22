@@ -1,30 +1,30 @@
-<div class="table__dropdown">
+<div class="Table__dropdown">
   <app-dropdown [label]="'Status'" [filterDropdown]="statuses" [id]="'status'" (change)="[onFilterTable('status')]"></app-dropdown>
   <app-dropdown [label]="'Description'" [id]="'description'" [filterDropdown]="descriptions" (change)="[onFilterTable('description')]"></app-dropdown>
 </div>
 
-<table class="table">
-    <tr class="table__label">
-      <th class="table__label-item" *ngFor="let label of tableLabels">{{label}}</th>
+<table class="Table">
+    <tr class="Table__label">
+      <th class="Table__label-item" *ngFor="let label of tableLabels">{{label}}</th>
     </tr>
-    <tr *ngFor="let row of filteredTable" class="table__row">
+    <tr *ngFor="let row of filteredTable" class="Table__row">
         <td>
             <app-radio-button status={{row.status}}></app-radio-button>
         </td>
         <td>
-            <img class="table__image" src={{row.image}} alt={{row.description}}>
+            <img class="Table__image" src={{row.image}} alt={{row.description}}>
         </td>
         <td>
-            <a class="table__number" href="">{{row.number}}</a>
+            <a class="link-number" href="">{{row.number}}</a>
         </td>
-      <td class="table__description">{{row.description}}</td>
+      <td class="Table__description">{{row.description}}</td>
       <td>{{row.instalDate}}</td>
       <td>{{row.lastService}}</td>
-      <td class="table__numberIcon">
-        <div class="table__numberIcon-item">{{row.nbComponents}}</div>
+      <td class="Table__numberIcon">
+        <div class="Table__numberIcon-item">{{row.nbComponents}}</div>
       </td>
       <td>
-        <div class="table__action"></div>
+        <div class="Table__action"></div>
       </td>
     </tr>
 </table>

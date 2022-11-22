@@ -1,7 +1,11 @@
 @import 'src/styles/variables.scss';
+@import 'src/styles/colors.scss';
 
-.app__container {
-    padding: 0 3.125rem;
-    margin: 0 auto;
-    width: $container-width;
+.app {
+    background-color: $body-color;
+    &__container {
+        padding: 0 3.125rem;
+        margin: 0 auto;
+        width: $container-width;
+    }
 }
