@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-flag-icon',
   templateUrl: './flag-icon.component.html',
-  styleUrls: ['./flag-icon.component.scss']
+  styleUrls: []
 })
 export class FlagIconComponent implements OnInit {
+  @Input() status: string;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    switch (this.status) {
+      case 'success': this.status = 'success'
+      this.status = '#74BC26';
+      break;
+      case 'warning': this.status = 'warning';
+      this.status ='#F5A623';
+      break;
+      case 'error': this.status = 'error';
+      this.status ='#FF5555';
+      break;
+      default: 'none';
+    }
   }
-
 }

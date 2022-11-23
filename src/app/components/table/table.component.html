@@ -9,10 +9,10 @@
     </tr>
     <tr *ngFor="let row of filteredTable" class="Table__row">
         <td>
-            <app-radio-button status={{row.status}}></app-radio-button>
+            <app-radio-button [status]="row.status"></app-radio-button>
         </td>
         <td>
-            <img class="Table__image" src={{row.image}} alt={{row.description}}>
+            <img class="Table__image" [src]="row.image" [alt]="row.description">
         </td>
         <td>
             <a class="link-number" href="">{{row.number}}</a>

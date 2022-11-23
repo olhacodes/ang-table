@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TableService {
+export class DataService {
   URL: string = 'http://localhost:3000/table';
-  public rowData: Observable<ITable[]>;
+  public data: Observable<ITable[]>;
   
   constructor(private http: HttpClient) { }
 
-  getTableData() {
-    this.rowData = this.http.get<ITable[]>(this.URL)
-    return this.rowData
+  getDataFromAPI() {
+    this.data = this.http.get<ITable[]>(this.URL)
+    return this.data
   }
 }

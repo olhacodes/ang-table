@@ -5,12 +5,13 @@
     border: none;
     color: $blue-color;
     border-radius: 1.625rem;
+    background-color: $white-color;
 }
 
 .primarily {
-    border: 1px solid #0167B9;
+    border: 1px solid $blue-color;
 }
 
 .secondary {
-    border: 1px solid red;
+    border: none;
 }

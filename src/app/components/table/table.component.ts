@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { TableService } from 'src/app/services/table.service';
-import { DropdownComponent } from '../dropdown/dropdown.component';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-table',
@@ -10,8 +9,7 @@ import { DropdownComponent } from '../dropdown/dropdown.component';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  constructor(private tableService: TableService) { }
-  @ViewChild('status') status: DropdownComponent
+  constructor(private DataService: DataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
@@ -22,7 +20,7 @@ export class TableComponent implements OnInit {
   descriptions: string[];
   
   ngOnInit() {
-    this.tableSubscription = this.tableService.getTableData()
+    this.tableSubscription = this.DataService.getDataFromAPI()
     .subscribe((data) => {
       this.tableData = data
       this.filteredTable = this.tableData

@@ -3,13 +3,20 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-icon-star',
   templateUrl: './icon-star.component.html',
-  styleUrls: ['./icon-star.component.scss']
+  styleUrls: []
 })
 export class IconStarComponent implements OnInit {
+  isIconClicked:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  OnChangeColor() {
+    this.isIconClicked = !this.isIconClicked;
+  }
+
 }
+
+//todo-add-cursor

@@ -1,4 +1,4 @@
-<div class="card border-0">
+<div class="card border-0" *ngFor="let card of cardData">
     <div class="card__header border-dashed">
         <div class="card__icon">
             <app-icon-star></app-icon-star>
@@ -9,9 +9,9 @@
         </div>
     </div>
     <div class="card__status border-dashed py-2">
-        <app-flag-icon></app-flag-icon>
-        <a href="" class="link-number">3124324</a>
-        <span class="card__date">Sep 13, 2022</span>
+        <app-flag-icon [status]="card.status"></app-flag-icon>
+        <a href="" class="link-number">{{card.number}}</a>
+        <span class="card__date">{{card.instalDate}}</span>
     </div>
     <div class="card__body border-dashed py-2">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
@@ -21,6 +21,6 @@
         <span class="card__price">14089,30 €</span>
     </div>
     <div class="card__footer py-2">
-        <app-button [btnClass]="'secondary'" [value]="'More'"></app-button>
+        <app-button [btnClass]="'primarily'" [value]="'More'"></app-button>
     </div>
 </div>
