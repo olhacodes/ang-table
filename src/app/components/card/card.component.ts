@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { DataService } from 'src/app/services/data.service';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,13 +6,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  constructor(private DataService: DataService) { }
-  cardData: ITable[];
-  cardSubscription: Subscription;
+  constructor() { }
+  @Input() cardData: ITable[];
 
   ngOnInit() {
-    this.cardSubscription = this.DataService.getDataFromAPI().subscribe(data => {
-      this.cardData = data;
-    })
+
   }
 }
