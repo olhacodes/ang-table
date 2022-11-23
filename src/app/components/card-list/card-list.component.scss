@@ -2,17 +2,19 @@
 
 ::ng-deep .carousel-control-next-icon, ::ng-deep .carousel-control-prev-icon {
     background-image: url('../../../assets/images/arrow.svg');
+    background-color: $white-color;
 }
 
-::ng-deep .carousel-control-prev-icon {
+::ng-deep .carousel-control-next-icon {
     transform: rotate(180deg);
 }
 
 ::ng-deep .carousel-control-next, ::ng-deep .carousel-control-prev {
     opacity: 1;
-    bottom: -100%;
+    bottom: -110%;
+    width: unset;
 }
 
-::ng-deep .carousel-item {
-    display: block;
+::ng-deep .carousel-control-prev {
+    left: 88%;
 }

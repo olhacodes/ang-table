@@ -14,9 +14,6 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   constructor(private DataService: DataService, config: NgbCarouselConfig) { 
     config.interval = 10000;
-		config.wrap = false;
-		config.keyboard = false;
-		config.pauseOnHover = false;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
   }
