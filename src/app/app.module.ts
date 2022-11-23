@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { TableComponent } from './components/table/table.component';
 import { RadioButtonComponent } from './components/icons/radio-button/radio-button.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
 import { LastViewedBlockComponent } from './blocks/last-viewed-block/last-viewed-block.component';
 import { TableBlockComponent } from './blocks/table-block/table-block.component';
@@ -27,7 +26,6 @@ import { ButtonComponent } from './components/button/button.component';
     DropdownComponent,
     TableComponent,
     RadioButtonComponent,
-    CarouselComponent,
     CardComponent,
     LastViewedBlockComponent,
     TableBlockComponent,

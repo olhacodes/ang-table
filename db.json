@@ -59,6 +59,16 @@
             "instalDate": "Sep 13, 2022",
             "lastService": "Jul 23, 2023",
             "nbComponents": 5
+        },
+        {
+            "id": "7",
+            "status": "warning",
+            "image": "assets/images/img2.png",
+            "number": 123455,
+            "description": "Some description 7",
+            "instalDate": "Sep 13, 2022",
+            "lastService": "Jul 23, 2023",
+            "nbComponents": 5
         }
     ]
 }

@@ -33,3 +33,9 @@
     width: 3.125rem;
     height: 0.3125rem;
 }
+
+:host {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: row;
+}

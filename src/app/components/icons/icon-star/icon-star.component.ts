@@ -18,5 +18,3 @@ export class IconStarComponent implements OnInit {
   }
 
 }
-
-//todo-add-cursor

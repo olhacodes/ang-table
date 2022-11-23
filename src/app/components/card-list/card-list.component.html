@@ -1,3 +1,7 @@
 <div class="card-list">
-    <app-card [cardData]="cardData"></app-card>
+    <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let carousel of cardData">
+            <app-card [cardData]="carousel"></app-card>
+        </ng-template>
+    </ngb-carousel>
 </div>

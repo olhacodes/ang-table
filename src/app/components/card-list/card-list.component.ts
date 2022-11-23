@@ -1,16 +1,27 @@
-import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.scss']
+  styleUrls: ['./card-list.component.scss'],
+  providers: [NgbCarouselConfig]
 })
 export class CardListComponent implements OnInit, OnDestroy {
-  constructor(private DataService: DataService) { }
-  @Input() cardData: ITable[];
+
+  constructor(private DataService: DataService, config: NgbCarouselConfig) { 
+    config.interval = 10000;
+		config.wrap = false;
+		config.keyboard = false;
+		config.pauseOnHover = false;
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = false;
+  }
+  
+  cardData: any[] = [];
   cardSubscription: Subscription;
   cardList: any[] = [];
   sliceArrayIntoGroups: any
@@ -24,13 +35,10 @@ export class CardListComponent implements OnInit, OnDestroy {
       while(this.i < this.cardData.length) {
         this.cardList.push(this.cardData.slice(this.i, this.i +=this.size))
       }
-      this.cardData = this.cardList
-      
-      console.log(this.cardData)
+      this.cardData = this.cardList;
     })
   }
 
-  
   ngOnDestroy() {
     this.cardSubscription.unsubscribe();
   }
