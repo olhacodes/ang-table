@@ -3,24 +3,24 @@
         <div class="card__icon">
             <app-icon-star></app-icon-star>
         </div>
-        <div class="card__notification py-2">
+        <div class="card__notification py-3">
             <img src="../../../assets/images/notification-icon.svg" alt="NOTIFICATION">
             <h4>NOTIFICATION</h4>
         </div>
     </div>
-    <div class="card__status border-dashed py-2">
+    <div class="card__status border-dashed py-3">
         <app-flag-icon [status]="card.status"></app-flag-icon>
         <a href="" class="link-number">{{card.number}}</a>
         <span class="card__date">{{card.instalDate}}</span>
     </div>
-    <div class="card__body border-dashed py-2">
+    <div class="card__body border-dashed py-3">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
     </div>
     <div class="card__progress border-dashed py-2 d-flex">
         <ngb-progressbar type="primary" [value]="75"></ngb-progressbar>
         <span class="card__price">14089,30 €</span>
     </div>
-    <div class="card__footer py-2">
+    <div class="card__footer py-3">
         <app-button [btnClass]="'primarily'" [value]="'More'"></app-button>
     </div>
 </div>
