@@ -40,6 +40,12 @@ $number-icon-width: 0.9375rem;
         &-item {
             padding: 0.9375rem 0;
             font-weight: 400;
+
+            &:nth-child(3) {
+                display: flex;
+                gap: 0.625rem;
+                cursor: pointer;
+            }
         }
     }
 

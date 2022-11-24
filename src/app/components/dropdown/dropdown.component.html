@@ -1,6 +1,6 @@
 <div class="Dropdown">
   <div class="Dropdown__container">
-    <span class="Dropdown__label">{{label}}</span>
+    <span class="Dropdown__label">{{label | uppercase}}</span>
     <select id={{id}} class="selectpicker Dropdown__item">
       <option *ngFor="let filter of filterDropdown" value={{filter}}>{{filter}}</option>
     </select>

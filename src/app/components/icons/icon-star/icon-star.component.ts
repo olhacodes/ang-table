@@ -16,5 +16,4 @@ export class IconStarComponent implements OnInit {
   OnChangeColor() {
     this.isIconClicked = !this.isIconClicked;
   }
-
 }

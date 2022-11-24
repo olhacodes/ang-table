@@ -5,7 +5,12 @@
 
 <table class="Table">
     <tr class="Table__label">
-      <th class="Table__label-item" *ngFor="let label of tableLabels">{{label}}</th>
+      <ng-container *ngFor="let label of tableLabels">
+        <th class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort(label)">{{label}}
+          <img *ngIf="label === 'Number'" src="../../../assets/images/arrow-down.svg" alt="arrow-down">
+        </th>
+        <th *ngIf="label !== 'Number'" class="Table__label-item">{{label}}</th>
+      </ng-container>
     </tr>
     <tr *ngFor="let row of filteredTable" class="Table__row">
         <td>

@@ -41,6 +41,10 @@ export class TableComponent implements OnInit, OnDestroy {
     this.filteredTable = this.filteringService.onFilterTable(field)
   }
 
+  onSort(label) {
+    console.log(label)
+  }
+
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
