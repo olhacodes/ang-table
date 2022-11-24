@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DataService } from 'src/app/services/data.service';
+import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit, OnDestroy {
-  constructor(private DataService: DataService) { }
+  constructor(private DataService: DataService, private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
@@ -18,6 +19,7 @@ export class TableComponent implements OnInit, OnDestroy {
 
   statuses: string[];
   descriptions: string[];
+  viewedProducts: ITable[] = [];
   
   ngOnInit() {
     this.tableSubscription = this.DataService.getDataFromAPI()
@@ -32,21 +34,14 @@ export class TableComponent implements OnInit, OnDestroy {
       this.descriptions = [...new Set(data.map(item => item.description))]
       this.descriptions.push('Show All')
       this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
-    });
+    })
   }
 
   onFilterTable(field: string) {
-    const filtereValue = (document.getElementById(field) as HTMLInputElement).value;
-
-    this.filteredTable =  filtereValue !== 'Show All' ? this.tableData.filter(item =>  field === 'status' ? (item.status ===  filtereValue) : (item.description === filtereValue)) : this.tableData
-    
-    return this.filteredTable
+    this.filteredTable = this.filteringService.onFilterTable(field)
   }
-
 
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
 }
-
-//to-do refactor dropdown functionality

@@ -10,5 +10,6 @@ export class CardComponent implements OnInit {
   @Input() cardData: ITable[];
 
   ngOnInit() {
+   
   }
 }

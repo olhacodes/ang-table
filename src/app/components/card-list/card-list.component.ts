@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from 'src/app/services/data.service';
+import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
   selector: 'app-card-list',
@@ -12,7 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CardListComponent implements OnInit, OnDestroy {
 
-  constructor(private DataService: DataService, config: NgbCarouselConfig) { 
+  constructor(private DataService: DataService, config: NgbCarouselConfig, private filteringService: FilteringDataService) { 
     config.interval = 10000;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
@@ -20,7 +21,6 @@ export class CardListComponent implements OnInit, OnDestroy {
   
   cardData: any[] = [];
   cardSubscription: Subscription;
-  cardList: any[] = [];
   sliceArrayIntoGroups: any
   size: number = 3;
   i: number = 0;
@@ -28,11 +28,12 @@ export class CardListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.cardSubscription = this.DataService.getDataFromAPI().subscribe(data => {
       this.cardData = data;
+      const cardList = []
 
       while(this.i < this.cardData.length) {
-        this.cardList.push(this.cardData.slice(this.i, this.i +=this.size))
+        cardList.push(this.cardData.slice(this.i, this.i +=this.size))
       }
-      this.cardData = this.cardList;
+      this.cardData = cardList;
     })
   }
 

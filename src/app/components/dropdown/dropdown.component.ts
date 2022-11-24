@@ -9,7 +9,6 @@ export class DropdownComponent implements OnInit {
   @Input() label: string;
   @Input() id: string;
   @Input() filterDropdown: string[];
-  @Output() onFilter: any;
 
   constructor() { }
 
