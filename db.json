@@ -15,7 +15,7 @@
             "status": "error",
             "image": "assets/images/img2.png",
             "number": 3203,
-            "description": "Aome description 2",
+            "description": "Some description 2",
             "instalDate": "Sep 13, 2022",
             "lastService": "Jul 23, 2023",
             "nbComponents": 7
@@ -25,7 +25,7 @@
             "status": "warning",
             "image": "assets/images/img1.png",
             "number": 1013,
-            "description": "wome description 3",
+            "description": "Some description 3",
             "instalDate": "Sep 13, 2022",
             "lastService": "Jul 23, 2023",
             "nbComponents": 3

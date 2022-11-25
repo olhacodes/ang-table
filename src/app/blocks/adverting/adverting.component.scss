@@ -1,0 +1,16 @@
+.adverting {
+    text-align: center;
+    background-image: url('../../../assets/images/adverting.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4.375rem 0;
+    text-transform: uppercase;
+
+    &__container {
+        width: 25.6875rem;
+        display: flex;
+        gap: 0.75rem;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+}

@@ -18,6 +18,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { IconStarComponent } from './components/icons/icon-star/icon-star.component';
 import { FlagIconComponent } from './components/icons/flag-icon/flag-icon.component';
 import { ButtonComponent } from './components/button/button.component';
+import { AdvertingComponent } from './blocks/adverting/adverting.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ButtonComponent } from './components/button/button.component';
     CardListComponent,
     IconStarComponent,
     FlagIconComponent,
-    ButtonComponent
+    ButtonComponent,
+    AdvertingComponent
   ],
   imports: [
     BrowserModule,
