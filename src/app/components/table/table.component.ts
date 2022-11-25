@@ -38,7 +38,7 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   onFilterTable(field: string) {
-    this.filteredTable = this.filteringService.onFilterTable(field)
+    this.filteredTable = this.filteringService.onFilterTable(field, this.tableData)
   }
 
   onSort(label) {
