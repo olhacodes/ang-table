@@ -5,13 +5,13 @@
                 <h2>Sign up to our Newsletter</h2>
                 <div style="width: 17.3125rem;">Get <b>10% off</b> your first order and receive weekly updates in your inbox</div>
             </div>
-            <img src="../../../assets/images/logo.svg" alt="ecenta">
+            <img [routerLink]="['']" src="../../../assets/images/logo.svg" alt="ecenta">
         </div>
         <div class="footer__right">
             <div class="footer__right-text">Subscribe for newsletter</div>
             <ul class="footer__menu">
-                <li>Contact us</li>
-                <li>Data Privacy</li>
+                <li [routerLink]="['/contact']"> Contact us</li>
+                <li [routerLink]="['/privacy-policy']">Data Privacy</li>
                 <li>Imprint</li>
             </ul>
         </div>

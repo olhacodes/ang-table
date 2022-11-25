@@ -20,6 +20,9 @@ import { FlagIconComponent } from './components/icons/flag-icon/flag-icon.compon
 import { ButtonComponent } from './components/button/button.component';
 import { AdvertingComponent } from './blocks/adverting/adverting.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { IstaledBaseComponent } from './pages/istaled-base/istaled-base.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { FooterComponent } from './components/footer/footer.component';
     FlagIconComponent,
     ButtonComponent,
     AdvertingComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    PrivacyPolicyComponent,
+    IstaledBaseComponent
   ],
   imports: [
     BrowserModule,
