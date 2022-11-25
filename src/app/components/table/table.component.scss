@@ -94,3 +94,7 @@ $number-icon-width: 0.9375rem;
         cursor: pointer;
     }
 }
+
+.rotate {
+    transform: rotate(180deg);;
+}

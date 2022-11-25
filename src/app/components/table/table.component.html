@@ -6,8 +6,8 @@
 <table class="Table">
     <tr class="Table__label">
       <ng-container *ngFor="let label of tableLabels">
-        <th class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort(label)">{{label}}
-          <img *ngIf="label === 'Number'" src="../../../assets/images/arrow-down.svg" alt="arrow-down">
+        <th id="number" class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort('number')">{{label}}
+          <img [ngClass]="rotateSortIcon ? 'rotate' : ''" *ngIf="label === 'Number'" src="../../../assets/images/arrow-down.svg" alt="arrow-down">
         </th>
         <th *ngIf="label !== 'Number'" class="Table__label-item">{{label}}</th>
       </ng-container>
@@ -22,7 +22,7 @@
         <td>
             <a class="link-number" href="">{{row.number}}</a>
         </td>
-      <td class="Table__description">{{row.description}}</td>
+      <td class="Table__description" id="description" (click)="onSort('description')">{{row.description}}</td>
       <td>{{row.instalDate}}</td>
       <td>{{row.lastService}}</td>
       <td class="Table__numberIcon">

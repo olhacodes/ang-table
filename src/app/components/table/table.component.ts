@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DataService } from 'src/app/services/data.service';
@@ -20,6 +20,7 @@ export class TableComponent implements OnInit, OnDestroy {
   statuses: string[];
   descriptions: string[];
   viewedProducts: ITable[] = [];
+  @Input() rotateSortIcon: boolean = false; 
   
   ngOnInit() {
     this.tableSubscription = this.DataService.getDataFromAPI()
@@ -41,8 +42,9 @@ export class TableComponent implements OnInit, OnDestroy {
     this.filteredTable = this.filteringService.onFilterTable(field, this.tableData)
   }
 
-  onSort(label) {
-    console.log(label)
+  onSort(field: string) {
+    this.filteredTable = this.filteringService.onSortTable(field, this.tableData)
+    this.rotateSortIcon = this.filteringService.isSorted
   }
 
   ngOnDestroy() {
