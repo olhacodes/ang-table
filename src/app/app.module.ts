@@ -19,6 +19,7 @@ import { IconStarComponent } from './components/icons/icon-star/icon-star.compon
 import { FlagIconComponent } from './components/icons/flag-icon/flag-icon.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AdvertingComponent } from './blocks/adverting/adverting.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AdvertingComponent } from './blocks/adverting/adverting.component';
     IconStarComponent,
     FlagIconComponent,
     ButtonComponent,
-    AdvertingComponent
+    AdvertingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

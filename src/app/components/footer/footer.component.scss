@@ -1,0 +1,65 @@
+@import 'src/styles/colors.scss';
+
+.footer {
+    background-color: $blue-color;
+    color: $white-color;
+    padding: 2rem 3.0625rem 2.1875rem;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left-text {
+        margin-bottom: 2.125rem;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-text {
+            font-size: 1.125rem;
+            float: right;
+            height: 2.8125rem;
+            cursor: pointer;
+            
+            &::after {
+                content: '\279C';
+                color: $white-color;
+                padding-left: 9.375rem;
+            }
+        }
+    }
+
+    &__menu {
+        padding: 0;
+        display: inline-flex;
+        position: relative;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            width: 100%;
+            border-bottom: 0.0625rem solid $white-color;
+            position: absolute;
+            top: -300%;
+            left: 0;
+        }
+
+        li {
+            float: right;
+
+            &:not(:last-child):after {
+                content: '\22C5';
+                color: $white-color;
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+img {
+    cursor: pointer;
+}

@@ -1,8 +1,7 @@
 .adverting {
     text-align: center;
-    background-image: url('../../../assets/images/adverting.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: url('../../../assets/images/adverting.png') no-repeat;
+    background-size: cover;
     padding: 4.375rem 0;
     text-transform: uppercase;
 
