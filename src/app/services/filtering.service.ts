@@ -19,7 +19,11 @@ export class FilteringDataService {
 
   onFilterTable(field: string) {
     const filtereValue = (document.getElementById(field) as HTMLInputElement).value;
-    this.filteredTable =  filtereValue !== 'Show All' ? this.tableData.filter(item =>  field === 'status' ? (item.status ===  filtereValue) : (item.description === filtereValue)) : this.tableData
+    
+    this.filteredTable =  filtereValue !== 'Show All' ? this.tableData.filter(item =>  {
+      return item[field] === filtereValue;
+    }) : this.tableData
+
     return this.filteredTable
   }
 }

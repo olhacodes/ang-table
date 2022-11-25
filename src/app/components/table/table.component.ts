@@ -48,4 +48,5 @@ export class TableComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
+
 }
