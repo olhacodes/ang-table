@@ -26,7 +26,8 @@ const routes: Routes = [
         .then(m => m.PrivacyPolicyModule)},
     {path: 'product/:id', 
         loadChildren:() => import('../product/product.module')
-        .then(m => m.ProductModule)}
+        .then(m => m.ProductModule)
+    }
   ];
 
 @NgModule({
