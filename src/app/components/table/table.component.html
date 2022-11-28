@@ -20,7 +20,7 @@
             <img class="Table__image" [src]="row.image" [alt]="row.description">
         </td>
         <td>
-            <a class="link-number" href="">{{row.number}}</a>
+            <a class="link-number"[routerLink]="['product', row.number]">{{row.number}}</a>
         </td>
       <td class="Table__description" id="description" (click)="onSort('description')">{{row.description}}</td>
       <td>{{row.instalDate}}</td>

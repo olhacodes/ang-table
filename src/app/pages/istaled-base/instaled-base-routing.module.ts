@@ -20,10 +20,13 @@ const routes: Routes = [
     {path: '', component: IstaledBaseComponent},
     {path: 'contact', 
     loadChildren: () => import('../contact/contact.module')
-    .then(m => m.ContactModule)},
+        .then(m => m.ContactModule)},
     {path: 'privacy-policy', 
     loadChildren: () => import('src/app/pages/privacy-policy/privacy-policy.module')
-    .then(m => m.PrivacyPolicyModule)},
+        .then(m => m.PrivacyPolicyModule)},
+    {path: 'product/:id', 
+        loadChildren:() => import('../product/product.module')
+        .then(m => m.ProductModule)}
   ];
 
 @NgModule({
