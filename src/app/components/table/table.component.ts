@@ -21,11 +21,14 @@ export class TableComponent implements OnInit, OnDestroy {
   descriptions: string[];
   viewedProducts: ITable[] = [];
   @Input() rotateSortIcon: boolean = false; 
+  @Input() error: boolean = false;
+  @Input() errorMessage = 'Loading...';
   
   ngOnInit() {
     this.tableSubscription = this.DataService.getDataFromAPI()
-    .subscribe((data) => {
-      this.tableData = data
+    .subscribe({
+      next: (data) => {
+      this.tableData = data;
       this.filteredTable = this.tableData
 
       this.statuses = [...new Set(data.map(item => item.status))]
@@ -35,7 +38,12 @@ export class TableComponent implements OnInit, OnDestroy {
       this.descriptions = [...new Set(data.map(item => item.description))]
       this.descriptions.push('Show All')
       this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
-    })
+    },
+      error: (error) => {
+        this.error = true;
+        this.errorMessage = error.message;
+      }
+    });
   }
 
   onFilterTable(field: string) {

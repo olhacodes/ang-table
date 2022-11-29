@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdvertingComponent } from 'src/app/blocks/adverting/adverting.component';
 import { LastViewedBlockComponent } from 'src/app/blocks/last-viewed-block/last-viewed-block.component';
 import { TableBlockComponent } from 'src/app/blocks/table-block/table-block.component';
+import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CardListComponent } from 'src/app/components/card-list/card-list.component';
 import { CardComponent } from 'src/app/components/card/card.component';
@@ -48,7 +49,8 @@ const routes: Routes = [
         IconStarComponent,
         FlagIconComponent,
         ButtonComponent,
-        AdvertingComponent
+        AdvertingComponent,
+        AlertComponent
     ],
     exports: [RouterModule],
 })
