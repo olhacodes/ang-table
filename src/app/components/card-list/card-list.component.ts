@@ -1,9 +1,7 @@
-import { Component, OnDestroy, OnInit} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit} from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from 'src/app/services/data.service';
-import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
   selector: 'app-card-list',
@@ -11,22 +9,21 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
   styleUrls: ['./card-list.component.scss'],
   providers: [NgbCarouselConfig]
 })
-export class CardListComponent implements OnInit, OnDestroy {
+export class CardListComponent implements OnInit {
 
-  constructor(private DataService: DataService, config: NgbCarouselConfig, private filteringService: FilteringDataService) { 
+  constructor(private DataService: DataService, config: NgbCarouselConfig) { 
     config.interval = 10000;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
   }
   
   cardData: any[] = [];
-  cardSubscription: Subscription;
   sliceArrayIntoGroups: any
   size: number = 3;
   i: number = 0;
 
   ngOnInit() {
-    this.cardSubscription = this.DataService.getDataFromAPI().subscribe(data => {
+    this.DataService.getDataFromAPI().subscribe(data => {
       this.cardData = data;
       const cardList = []
 
@@ -35,9 +32,5 @@ export class CardListComponent implements OnInit, OnDestroy {
       }
       this.cardData = cardList;
     })
-  }
-
-  ngOnDestroy() {
-    this.cardSubscription.unsubscribe();
   }
 }
