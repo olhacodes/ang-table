@@ -1,7 +1,18 @@
 <div class="Table__dropdown">
-  <app-dropdown [label]="'Status'" [filterDropdown]="statuses" [id]="'status'" (change)="[onFilterTable('status')]"></app-dropdown>
-  <app-dropdown [label]="'Description'" [id]="'description'" [filterDropdown]="descriptions" (change)="[onFilterTable('description')]"></app-dropdown>
+  <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected, 'status')">
+    <option *ngFor="let option of statuses"> 
+      {{ option }}
+    </option>
+  </select>
+
+  <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected, 'description')">
+    <option *ngFor="let option of descriptions"> 
+      {{ option }}
+    </option>
+  </select>
 </div>
+
+
 <app-alert [type]="'danger'" *ngIf="error" [message]="errorMessage"></app-alert>
 <table class="Table">
     <tr class="Table__label">

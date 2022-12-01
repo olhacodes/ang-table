@@ -7,14 +7,6 @@ export class FilteringDataService {
   isSorted: boolean = false;
   direction: string = 'desc';
 
-  onFilterTable(field: string, tableData) {
-    const filtereValue = (document.getElementById(field) as HTMLInputElement).value;
-    
-    return filtereValue !== 'Show All' ? tableData.filter(item =>  {
-      return item[field] === filtereValue;
-    }) : tableData
-  }
-
   onSort() {
     this.isSorted =!this.isSorted;
   }

@@ -10,7 +10,6 @@ export class DropdownComponent implements OnInit {
   @Input() id: string;
   @Input() filterDropdown: string[];
 
-  constructor() { }
 
   ngOnInit(): void {
   }

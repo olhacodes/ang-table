@@ -15,11 +15,12 @@ export class TableComponent implements OnInit, OnDestroy {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
-  filteredTable: any[];
 
+  filteredTable: any[];
   statuses: string[];
   descriptions: string[];
-  viewedProducts: ITable[] = [];
+  selected;
+
   @Input() rotateSortIcon: boolean = false; 
   @Input() error: boolean = false;
   @Input() errorMessage = 'Loading...';
@@ -46,8 +47,12 @@ export class TableComponent implements OnInit, OnDestroy {
     });
   }
 
-  onFilterTable(field: string) {
-    this.filteredTable = this.filteringService.onFilterTable(field, this.tableData)
+  onSelect(filteredValue, field){
+    if(filteredValue !== 'Show All') {
+     return this.filteredTable = this.tableData.filter(item => item[field] == filteredValue)
+    } else {
+      return this.filteredTable = this.tableData
+    }
   }
 
   onSort(field: string) {

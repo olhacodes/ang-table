@@ -7,6 +7,8 @@ $image-width: 2.5rem;
 $wide-row: 11.25rem;
 $number-icon-width: 0.9375rem;
 
+$dropdown-width: 6.25rem;
+
 .Table {
     text-align: left;
     width: 100%;
@@ -23,6 +25,7 @@ $number-icon-width: 0.9375rem;
         justify-content: end;
         gap: 1.25rem;
         padding-top: 1.5625rem;
+        margin-bottom: 1.5rem;
     }
 
     &__label {
@@ -97,4 +100,15 @@ $number-icon-width: 0.9375rem;
 
 .rotate {
     transform: rotate(180deg);;
+}
+
+select {
+    background-color: $white-color;
+    border-radius: 1.5rem;
+    padding: 0.3125rem 0.3125rem 0.3125rem 0.625rem;
+    width: $dropdown-width;
+    font-size: 0.8125rem;
+    color: $blue-color;
+    font-weight: 700;
+    border-color: transparent;
 }
