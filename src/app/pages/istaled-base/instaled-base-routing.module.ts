@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,10 +10,12 @@ import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CardListComponent } from 'src/app/components/card-list/card-list.component';
 import { CardComponent } from 'src/app/components/card/card.component';
+import { DropdownComponent } from 'src/app/components/dropdown/dropdown.component';
 import { FlagIconComponent } from 'src/app/components/icons/flag-icon/flag-icon.component';
 import { IconStarComponent } from 'src/app/components/icons/icon-star/icon-star.component';
 import { RadioButtonComponent } from 'src/app/components/icons/radio-button/radio-button.component';
 import { TableComponent } from 'src/app/components/table/table.component';
+import { SideNavigationComponent } from 'src/app/microservices/side-navigation/side-navigation.component';
 import { IstaledBaseComponent } from './istaled-base.component';
 
 const routes: Routes = [
@@ -36,11 +37,11 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         CommonModule, 
         NgbModule,
-        FormsModule
         ],
     declarations: [
         IstaledBaseComponent,
         TableComponent,     
+        DropdownComponent,
         RadioButtonComponent,
         CardComponent,
         LastViewedBlockComponent,
@@ -50,7 +51,8 @@ const routes: Routes = [
         FlagIconComponent,
         ButtonComponent,
         AdvertingComponent,
-        AlertComponent
+        AlertComponent,
+        SideNavigationComponent,
     ],
     exports: [RouterModule],
 })

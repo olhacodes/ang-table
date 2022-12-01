@@ -1,4 +1,5 @@
 <div class="Table__dropdown">
+ 
   <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
     <option *ngFor="let option of statuses"> 
       {{ option }}

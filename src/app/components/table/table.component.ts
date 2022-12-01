@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DataService } from 'src/app/services/data.service';
@@ -15,6 +15,7 @@ export class TableComponent implements OnInit, OnDestroy {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
+  filteredTable: ITable[];
 
   filteredTable: any[];
   statuses: string[];
@@ -25,6 +26,7 @@ export class TableComponent implements OnInit, OnDestroy {
   @Input() rotateSortIcon: boolean = false; 
   @Input() error: boolean = false;
   @Input() errorMessage = 'Loading...';
+  @ViewChild('filter', {static: true}) myFilter: ElementRef;
   
   ngOnInit() {
     this.tableSubscription = this.DataService.data
@@ -46,6 +48,7 @@ export class TableComponent implements OnInit, OnDestroy {
         this.errorMessage = error.message;
       }
     });
+    console.log(this.myFilter, 'on myFilter')
   }
 
   onSelect(filteredValue, field){
