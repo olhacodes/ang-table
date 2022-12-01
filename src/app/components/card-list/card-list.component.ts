@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { DataService } from 'src/app/services/data.service';
-import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
   selector: 'app-card-list',
@@ -13,7 +12,7 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
 })
 export class CardListComponent implements OnInit, OnDestroy {
 
-  constructor(private DataService: DataService, config: NgbCarouselConfig, private filteringService: FilteringDataService) { 
+  constructor(private DataService: DataService, config: NgbCarouselConfig) { 
     config.interval = 10000;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
@@ -26,15 +25,17 @@ export class CardListComponent implements OnInit, OnDestroy {
   i: number = 0;
 
   ngOnInit() {
-    this.cardSubscription = this.DataService.getDataFromAPI().subscribe(data => {
-      this.cardData = data;
-      const cardList = []
-
-      while(this.i < this.cardData.length) {
-        cardList.push(this.cardData.slice(this.i, this.i +=this.size))
+    this.cardSubscription = this.DataService.data.subscribe(
+      (data) => {
+        this.cardData = data;
+         let cardList = []
+   
+         while(this.i < this.cardData.length) {
+           cardList.push(this.cardData.slice(this.i, this.i +=this.size))
+         }
+         this.cardData = cardList;
       }
-      this.cardData = cardList;
-    })
+    )
   }
 
   ngOnDestroy() {

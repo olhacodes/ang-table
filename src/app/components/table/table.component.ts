@@ -15,7 +15,7 @@ export class TableComponent implements OnInit, OnDestroy {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
-  filteredTable: ITable[];
+  filteredTable: any[];
 
   statuses: string[];
   descriptions: string[];
@@ -25,7 +25,7 @@ export class TableComponent implements OnInit, OnDestroy {
   @Input() errorMessage = 'Loading...';
   
   ngOnInit() {
-    this.tableSubscription = this.DataService.getDataFromAPI()
+    this.tableSubscription = this.DataService.data
     .subscribe({
       next: (data) => {
       this.tableData = data;
