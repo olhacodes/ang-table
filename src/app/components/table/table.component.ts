@@ -10,17 +10,67 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit, OnDestroy {
-  constructor(private DataService: DataService, private filteringService: FilteringDataService) { }
+  constructor(private dataService: DataService, private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
   filteredTable: any[];
+
+  statuses: string[];
+  descriptions: string[];
+  @Input() rotateSortIcon: boolean = false; 
+  
+  ngOnInit() {
+    this.tableSubscription = this.dataService.data
+    .subscribe(
+      (data) => {
+        this.tableData = data;
+        this.filteredTable = this.tableData
+  
+        this.statuses = [...new Set(data.map(item => item.status))]
+        this.statuses.push('Show All')
+        this.statuses.reverse()
+  
+        this.descriptions = [...new Set(data.map(item => item.description))]
+        this.descriptions.push('Show All')
+        this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
+      },
+      catchError(errorRes => {
+        return throwError(errorRes.json().error || 'Server error')
+      })
+    );
+  }
+
+  onSelect(filteredValue, field){
+    if(filteredValue !== 'Show All') {
+     return this.filteredTable = this.tableData.filter(item => item[field] == filteredValue)
+    } else {
+      return this.filteredTable = this.tableData
+    }
+  }
+
+  onSort(field: string) {
+    this.filteredTable = this.filteringService.onSortTable(field, this.tableData)
+    this.rotateSortIcon = this.filteringService.isSorted
+  }
+
+  ngOnDestroy() {
+    this.tableSubscription.unsubscribe();
+  }
+
+}
+<<<<<<< .mine
+  descriptions: string[];
+  viewedProducts: ITable[] = [];
+
+
+=======
   statuses: string[];
   descriptions: string[];
   selectedDesk;
   selectedStatus;
-
+>>>>>>> .theirs
   @Input() rotateSortIcon: boolean = false; 
   @Input() error: boolean = false;
   @Input() errorMessage = 'Loading...';
@@ -40,6 +90,21 @@ export class TableComponent implements OnInit, OnDestroy {
       this.descriptions.push('Show All')
       this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
     },
+<<<<<<< .mine
+      error: (error) => {
+        this.error = true;
+        this.errorMessage = error.message;
+      }
+    });
+
+
+
+
+
+
+
+
+=======
       error: (error) => {
         this.error = true;
         this.errorMessage = error.message;
@@ -53,7 +118,19 @@ export class TableComponent implements OnInit, OnDestroy {
     } else {
       return this.filteredTable = this.tableData
     }
+>>>>>>> .theirs
   }
+<<<<<<< .mine
+
+  onFilterTable(field: string) {
+    this.filteredTable = this.filteringService.onFilterTable(field, this.tableData)
+  }
+=======
+
+
+
+
+>>>>>>> .theirs
 
   onSort(field: string) {
     this.filteredTable = this.filteringService.onSortTable(field, this.tableData)
