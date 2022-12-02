@@ -10,9 +10,6 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit, OnDestroy {
-
-
-
   constructor(private dataService: DataService, private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
@@ -47,8 +44,6 @@ export class TableComponent implements OnInit, OnDestroy {
       })
     );
   }
-  }
-
 
   onSelect(filteredValue, field){
     if(filteredValue !== 'Show All') {
