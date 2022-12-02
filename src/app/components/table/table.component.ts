@@ -61,14 +61,3 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
 }
->>>>>>> .theirs
-
-  onSort(field: string) {
-    this.filteredTable = this.filteringService.onSortTable(field, this.tableData)
-    this.rotateSortIcon = this.filteringService.isSorted
-  }
-
-  ngOnDestroy() {
-    this.tableSubscription.unsubscribe();
-  }
-}
