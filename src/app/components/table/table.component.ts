@@ -10,7 +10,7 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit, OnDestroy {
-  constructor(private DataService: DataService, private filteringService: FilteringDataService) { }
+  constructor(private dataService: DataService, private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
@@ -22,7 +22,7 @@ export class TableComponent implements OnInit, OnDestroy {
   @Input() rotateSortIcon: boolean = false; 
   
   ngOnInit() {
-    this.tableSubscription = this.DataService.data
+    this.tableSubscription = this.dataService.data
     .subscribe(
       (data) => {
         this.tableData = data;
