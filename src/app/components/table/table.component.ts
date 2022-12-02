@@ -15,13 +15,10 @@ export class TableComponent implements OnInit, OnDestroy {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
-
   filteredTable: any[];
+
   statuses: string[];
   descriptions: string[];
-  selectedDesk;
-  selectedStatus;
-
   @Input() rotateSortIcon: boolean = false; 
   
   ngOnInit() {
@@ -43,14 +40,6 @@ export class TableComponent implements OnInit, OnDestroy {
         return throwError(errorRes.json().error || 'Server error')
       })
     );
-  }
-
-  onSelect(filteredValue, field){
-    if(filteredValue !== 'Show All') {
-     return this.filteredTable = this.tableData.filter(item => item[field] == filteredValue)
-    } else {
-      return this.filteredTable = this.tableData
-    }
   }
 
   onSort(field: string) {
