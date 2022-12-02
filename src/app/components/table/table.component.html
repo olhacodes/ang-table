@@ -1,17 +1,16 @@
 <div class="Table__dropdown">
-  <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected, 'status')">
+  <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
     <option *ngFor="let option of statuses"> 
       {{ option }}
     </option>
   </select>
 
-  <select [(ngModel)]="selected" (ngModelChange)="onSelect(selected, 'description')">
+  <select [(ngModel)]="selectedDesk" (ngModelChange)="onSelect(selectedDesk, 'description')">
     <option *ngFor="let option of descriptions"> 
       {{ option }}
     </option>
   </select>
 </div>
-
 
 <app-alert [type]="'danger'" *ngIf="error" [message]="errorMessage"></app-alert>
 <table class="Table">

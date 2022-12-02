@@ -11,7 +11,6 @@ import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CardListComponent } from 'src/app/components/card-list/card-list.component';
 import { CardComponent } from 'src/app/components/card/card.component';
-import { DropdownComponent } from 'src/app/components/dropdown/dropdown.component';
 import { FlagIconComponent } from 'src/app/components/icons/flag-icon/flag-icon.component';
 import { IconStarComponent } from 'src/app/components/icons/icon-star/icon-star.component';
 import { RadioButtonComponent } from 'src/app/components/icons/radio-button/radio-button.component';
@@ -42,7 +41,6 @@ const routes: Routes = [
     declarations: [
         IstaledBaseComponent,
         TableComponent,     
-        DropdownComponent,
         RadioButtonComponent,
         CardComponent,
         LastViewedBlockComponent,

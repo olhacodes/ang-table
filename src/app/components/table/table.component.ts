@@ -19,7 +19,8 @@ export class TableComponent implements OnInit, OnDestroy {
   filteredTable: any[];
   statuses: string[];
   descriptions: string[];
-  selected;
+  selectedDesk;
+  selectedStatus;
 
   @Input() rotateSortIcon: boolean = false; 
   @Input() error: boolean = false;
