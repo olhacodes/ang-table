@@ -11,6 +11,8 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
 })
 export class TableComponent implements OnInit, OnDestroy {
 
+
+
   constructor(private dataService: DataService, private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
