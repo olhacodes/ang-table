@@ -1,6 +1,15 @@
 <div class="Table__dropdown">
- 
+  <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
+    <option *ngFor="let option of statuses"> 
+      {{ option }}
+    </option>
+  </select>
 
+  <select [(ngModel)]="selectedDesk" (ngModelChange)="onSelect(selectedDesk, 'description')">
+    <option *ngFor="let option of descriptions"> 
+      {{ option }}
+    </option>
+  </select>
 </div>
 
 <table class="Table">
