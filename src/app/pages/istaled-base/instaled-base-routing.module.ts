@@ -15,6 +15,7 @@ import { FlagIconComponent } from 'src/app/components/icons/flag-icon/flag-icon.
 import { IconStarComponent } from 'src/app/components/icons/icon-star/icon-star.component';
 import { RadioButtonComponent } from 'src/app/components/icons/radio-button/radio-button.component';
 import { TableComponent } from 'src/app/components/table/table.component';
+import { SideNavigationComponent } from 'src/app/microservices/side-navigation/side-navigation.component';
 import { IstaledBaseComponent } from './istaled-base.component';
 
 const routes: Routes = [
@@ -50,7 +51,8 @@ const routes: Routes = [
         FlagIconComponent,
         ButtonComponent,
         AdvertingComponent,
-        AlertComponent
+        AlertComponent,
+        SideNavigationComponent,
     ],
     exports: [RouterModule],
 })
