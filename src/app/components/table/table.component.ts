@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { catchError, Subscription, throwError } from 'rxjs';
 
 import { DataService } from 'src/app/services/data.service';
 import { FilteringDataService } from 'src/app/services/filtering.service';
@@ -19,6 +19,7 @@ export class TableComponent implements OnInit, OnDestroy {
 
   statuses: string[];
   descriptions: string[];
+
   @Input() rotateSortIcon: boolean = false; 
   
   ngOnInit() {
@@ -60,76 +61,6 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
 }
-<<<<<<< .mine
-  descriptions: string[];
-  viewedProducts: ITable[] = [];
-
-
-=======
-  statuses: string[];
-  descriptions: string[];
-  selectedDesk;
-  selectedStatus;
->>>>>>> .theirs
-  @Input() rotateSortIcon: boolean = false; 
-  @Input() error: boolean = false;
-  @Input() errorMessage = 'Loading...';
-  
-  ngOnInit() {
-    this.tableSubscription = this.DataService.data
-    .subscribe({
-      next: (data) => {
-      this.tableData = data;
-      this.filteredTable = this.tableData
-
-      this.statuses = [...new Set(data.map(item => item.status))]
-      this.statuses.push('Show All')
-      this.statuses.reverse()
-
-      this.descriptions = [...new Set(data.map(item => item.description))]
-      this.descriptions.push('Show All')
-      this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
-    },
-<<<<<<< .mine
-      error: (error) => {
-        this.error = true;
-        this.errorMessage = error.message;
-      }
-    });
-
-
-
-
-
-
-
-
-=======
-      error: (error) => {
-        this.error = true;
-        this.errorMessage = error.message;
-      }
-    });
-  }
-
-  onSelect(filteredValue, field){
-    if(filteredValue !== 'Show All') {
-     return this.filteredTable = this.tableData.filter(item => item[field] == filteredValue)
-    } else {
-      return this.filteredTable = this.tableData
-    }
->>>>>>> .theirs
-  }
-<<<<<<< .mine
-
-  onFilterTable(field: string) {
-    this.filteredTable = this.filteringService.onFilterTable(field, this.tableData)
-  }
-=======
-
-
-
-
 >>>>>>> .theirs
 
   onSort(field: string) {
@@ -140,5 +71,4 @@ export class TableComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.tableSubscription.unsubscribe();
   }
-
 }
