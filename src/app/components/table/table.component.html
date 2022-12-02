@@ -1,11 +1,11 @@
 <div class="Table__dropdown">
-  <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
+  <select [(ngModel)]="selectedStatus" (change)="onSelect(selectedStatus, 'status')">
     <option *ngFor="let option of statuses"> 
       {{ option }}
     </option>
   </select>
 
-  <select [(ngModel)]="selectedDesk" (ngModelChange)="onSelect(selectedDesk, 'description')">
+  <select [(ngModel)]="selectedDesk" (change)="onSelect(selectedDesk, 'description')">
     <option *ngFor="let option of descriptions"> 
       {{ option }}
     </option>
