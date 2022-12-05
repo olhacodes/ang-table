@@ -19,6 +19,7 @@ export class TableComponent implements OnInit, OnDestroy {
 
   statuses: string[];
   descriptions: string[];
+
   selectedDesk: string;
   selectedStatus: string;
 
@@ -50,6 +51,15 @@ export class TableComponent implements OnInit, OnDestroy {
      return this.filteredTable = this.tableData.filter(item => item[field] == filteredValue)
     } else {
       return this.filteredTable = this.tableData
+    }
+  }
+
+  onReset(option) {
+    if(option !== this.selectedStatus) {
+      this.selectedStatus = 'Show All'
+    }
+    if(option!== this.selectedDesk) {
+      this.selectedDesk = 'Show All'
     }
   }
 
