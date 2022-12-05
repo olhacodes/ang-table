@@ -12,7 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CardListComponent implements OnInit, OnDestroy {
 
-  constructor(private DataService: DataService, config: NgbCarouselConfig) { 
+  constructor(private dataService: DataService, config: NgbCarouselConfig) { 
     config.interval = 10000;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = false;
@@ -25,7 +25,7 @@ export class CardListComponent implements OnInit, OnDestroy {
   i: number = 0;
 
   ngOnInit() {
-    this.cardSubscription = this.DataService.data.subscribe(
+    this.cardSubscription = this.dataService.notificationsData.subscribe(
       (data) => {
         this.cardData = data;
          let cardList = []

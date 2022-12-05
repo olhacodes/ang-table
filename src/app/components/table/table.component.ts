@@ -26,7 +26,7 @@ export class TableComponent implements OnInit, OnDestroy {
   @Input() rotateSortIcon: boolean = false; 
   
   ngOnInit() {
-    this.tableSubscription = this.dataService.data
+    this.tableSubscription = this.dataService.instaledBaseData
     .subscribe(
       (data) => {
         this.tableData = data;

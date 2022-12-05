@@ -12,11 +12,13 @@ export class IstaledBaseComponent implements OnInit, OnDestroy {
   @Input() errorMessage: string = "Loading...";
   errorSub: Subscription;
 
-  constructor(private DataService: DataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.DataService.loadData()
-    this.errorSub = this.DataService.error.subscribe( err => {
+    this.dataService.loadInstaledBaseData()
+    this.dataService.loadNotificationData()
+    
+    this.errorSub = this.dataService.error.subscribe( err => {
       if(this.errorMessage != null) {
         this.error = true;
       }
