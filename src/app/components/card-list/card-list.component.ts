@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 

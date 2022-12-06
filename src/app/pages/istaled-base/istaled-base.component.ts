@@ -9,24 +9,27 @@ import {DataService} from 'src/app/services/data.service'
 })
 export class IstaledBaseComponent implements OnInit, OnDestroy {
   error: boolean;
-  @Input() errorMessage: string = "Loading...";
-  errorSub: Subscription;
+  @Input() errorMessage: string[] = [];
+  errorSubInstaledBase: Subscription;
+  errorSubNotifications: Subscription;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.loadInstaledBaseData()
     this.dataService.loadNotificationData()
-    
-    this.errorSub = this.dataService.error.subscribe( err => {
-      if(this.errorMessage != null) {
-        this.error = true;
-      }
-      this.errorMessage = err
+
+    this.errorSubInstaledBase = this.dataService.errorInstaledBase.subscribe( err => {
+      this.dataService.onError(this.error, err, this.errorMessage)
+    });
+
+    this.errorSubNotifications = this.dataService.errorNotifications.subscribe( err => {
+      this.dataService.onError(this.error, err, this.errorMessage)
     });
   }
 
   ngOnDestroy(): void {
-    this.errorSub.unsubscribe();
+    this.errorSubInstaledBase.unsubscribe();
+    this.errorSubNotifications.unsubscribe();
   }
 }

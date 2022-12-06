@@ -1,4 +1,6 @@
-<app-alert [type]="'danger'" *ngIf="error" [message]="errorMessage"></app-alert>
+<div *ngFor="let error of errorMessage">
+    <app-alert [type]="'danger'" *ngIf="error" [message]="error"></app-alert>
+</div>
 <app-table-block></app-table-block>
 <app-last-viewed-block></app-last-viewed-block>
 <app-adverting></app-adverting>

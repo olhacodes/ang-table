@@ -14,25 +14,32 @@ export class DataService {
   public notificationsDataSource: BehaviorSubject<INotifications[]> = new BehaviorSubject([]);
   public notificationsData: Observable<INotifications[]> = this.notificationsDataSource.asObservable();
   
-  public error = new Subject<string>();
+  public errorInstaledBase = new Subject<string>();
+  public errorNotifications = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
-  loadInstaledBaseData() {
-    this.http.get<[]>(URLS.instaledBase).subscribe(res => {
-      this.instaledBaseDataSource.next(res);
-    },
+  onLoadData(url: string, data: BehaviorSubject<any> = new BehaviorSubject([]), error = new Subject<string>()) {
+    this.http.get<[]>(url).subscribe(res => {
+      data.next(res)
+    }, 
     err => {
-      this.error.next(err.message);
-    });
+      error.next(err.message)
+    })
+  }
+
+  onError(error, errorSubscriotion, errorMessage) {
+    if(errorMessage != null) {
+      error = true;
+    }
+    errorMessage.push(errorSubscriotion)
+  }
+
+  loadInstaledBaseData() {
+    this.onLoadData(URLS.instaledBase, this.instaledBaseDataSource, this.errorInstaledBase)
   }
 
   loadNotificationData() {
-    this.http.get<[]>(URLS.notifications).subscribe(res => {
-      this.notificationsDataSource.next(res);
-    },
-    err => {
-      this.error.next(err.message);
-    });
+    this.onLoadData(URLS.notifications, this.notificationsDataSource, this.errorNotifications)
   }
 }
