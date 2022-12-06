@@ -28,7 +28,7 @@ export class DataService {
     })
   }
 
-  onError(error, errorSubscriotion, errorMessage) {
+  onError(error:boolean, errorSubscriotion:string, errorMessage: string[] = []) {
     if(errorMessage != null) {
       error = true;
     }
