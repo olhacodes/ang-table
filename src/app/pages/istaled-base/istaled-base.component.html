@@ -1,6 +1,7 @@
-<div *ngFor="let error of errorMessage">
-    <app-alert [type]="'danger'" *ngIf="error" [message]="error"></app-alert>
-</div>
+<ng-container *ngIf="error | async">
+    <app-alert [type]="'danger'" [message]="errorMessage | async"></app-alert>
+</ng-container>
+
 <app-table-block></app-table-block>
 <app-last-viewed-block></app-last-viewed-block>
 <app-adverting></app-adverting>

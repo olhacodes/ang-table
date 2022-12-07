@@ -39,10 +39,7 @@ export class TableComponent implements OnInit, OnDestroy {
         this.descriptions = [...new Set(data.map(item => item.description))]
         this.descriptions.push('Show All')
         this.descriptions.reverse().sort((a, b) => a.localeCompare(b))
-      },
-      catchError(errorRes => {
-        return throwError(errorRes.json().error || 'Server error')
-      })
+      }
     );
   }
 
