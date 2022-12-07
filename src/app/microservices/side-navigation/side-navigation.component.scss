@@ -1,12 +1,13 @@
 @import 'src/styles/colors.scss';
 .microservices {
     position: fixed;
-    right: 19%;
-    top: 20%;
+    right: 13%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
 }
 
 .side-nav {
-    position: fixed;
     transform: rotate(-90deg);
     color: $white-color;
     font-size: 0.75rem;
@@ -25,14 +26,11 @@
     cursor: pointer;
 
     &__up {
-        top: 20%;
-        right: inherit;
         border-radius: 0 1.25rem 0 0;
     }
 
     &__down {
-        top: 29%;
-        right: 19.3%;
+        margin-top: 74%;
         border-radius: 1.25rem 0 0 0;
     }
 }
