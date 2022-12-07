@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { catchError, Subscription, throwError } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { DataService } from 'src/app/services/data.service';
 import { FilteringDataService } from 'src/app/services/filtering.service';
@@ -15,7 +15,7 @@ export class TableComponent implements OnInit, OnDestroy {
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: ITable[];
   tableSubscription: Subscription;
-  filteredTable: any[];
+  filteredTable: ITable[];
 
   statuses: string[];
   descriptions: string[];

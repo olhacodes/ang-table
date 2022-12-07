@@ -10,7 +10,7 @@ import { ErrorMessageService } from 'src/app/services/error-message.service';
 })
 export class IstaledBaseComponent implements OnInit {
   @Input() errorMessage: Observable<string>;
-  @Input() error:  Observable<boolean>;;
+  @Input() error:  Observable<boolean>;
 
   constructor(private dataService: DataService, private errorMessageService: ErrorMessageService) { }
 

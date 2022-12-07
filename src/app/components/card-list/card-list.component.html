@@ -1,4 +1,4 @@
-<div class="card-list">
+<div class="card-list" *ngIf="cardData.length">
     <ngb-carousel>
         <ng-template ngbSlide *ngFor="let carousel of cardData">
             <app-card [cardData]="carousel"></app-card>
