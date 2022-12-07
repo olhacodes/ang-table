@@ -6,7 +6,7 @@ import { ErrorMessageService } from 'src/app/services/error-message.service';
 @Component({
   selector: 'app-istaled-base',
   templateUrl: './istaled-base.component.html',
-  styleUrls: []
+  styleUrls: ['./istaled-base.component.scss']
 })
 export class IstaledBaseComponent implements OnInit {
   @Input() errorMessage: Observable<string>;
