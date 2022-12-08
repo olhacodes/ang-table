@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import {URLS} from '../constants/urls';
+import {environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +23,10 @@ export class DataService {
   }
 
   loadInstaledBaseData() {
-    this.onLoadData(URLS.instaledBase, this.instaledBaseDataSource)
+    this.onLoadData(environment.instaledBaseUrl, this.instaledBaseDataSource)
   }
 
   loadNotificationData() {
-    this.onLoadData(URLS.notifications, this.notificationsDataSource)
+    this.onLoadData(environment.notificationsUrl, this.notificationsDataSource)
   }
 }
