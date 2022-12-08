@@ -53,19 +53,11 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     switch (error.status) {
       case 0: // Unknown error
-        this.handleServerSideErrorCase(error, handled)
-        break;
       case 404: // Not found
-      this.handleServerSideErrorCase(error, handled)
-        break;
       case 401: // Unautorized
-      this.handleServerSideErrorCase(error, handled)
-        break;
       case 403: // Forbidden
-      this.handleServerSideErrorCase(error, handled)
-        break;
       case 503: // Server error
-      this.handleServerSideErrorCase(error, handled)
+        this.handleServerSideErrorCase(error, handled)
         break;
     }
 
