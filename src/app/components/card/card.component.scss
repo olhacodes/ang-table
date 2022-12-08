@@ -1,8 +1,6 @@
 @import 'src/styles/mixins.scss';
 @import 'src/styles/colors.scss';
 
-$card-width: 18.25rem;
-
 :host {
     display: flex;
     gap: 1.5rem;
@@ -12,7 +10,6 @@ $card-width: 18.25rem;
 
 .card {
     padding: 1rem;
-    width: $card-width;
 
     &__icon {
         position: absolute;

@@ -1,4 +1,4 @@
-<div class="Table__dropdown">
+<div class="Table__dropdown" [ngClass]="statuses.length <= 1 ? 'Table__dropdown--hide' : ''">
   <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
     <option *ngFor="let option of statuses"> 
       {{ option }}

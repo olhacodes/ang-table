@@ -26,6 +26,10 @@ $dropdown-width: 6.25rem;
         gap: 1.25rem;
         padding-top: 1.5625rem;
         margin-bottom: 1.5rem;
+
+        &--hide {
+            display: none;
+        }
     }
 
     &__label {

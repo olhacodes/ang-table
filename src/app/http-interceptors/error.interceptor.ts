@@ -17,17 +17,16 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(
       retry(1),
-      catchError((returnedError) => {
+      catchError((error) => {
         let errorMessage = null;
 
-        if (returnedError.error instanceof ErrorEvent) {
-          errorMessage = `Error: ${returnedError.error.message}`;
-        } else if (returnedError instanceof HttpErrorResponse) {
-          errorMessage = `Error Status ${returnedError.status}: ${returnedError.error.error} - ${returnedError.error.message}`;
-          handled = this.handleServerSideError(returnedError);
-        }
+        if (error instanceof ErrorEvent) {
+          errorMessage = `Error: ${error.message}`;
+        } else if (error instanceof HttpErrorResponse) {
+          errorMessage = `${error.name} ${error.status}: ${error.message}`;
 
-        console.error(errorMessage ? errorMessage : returnedError);
+          handled = this.handleServerSideError(error);
+        }
 
         if (!handled) {
           if (errorMessage) {
@@ -36,7 +35,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             return throwError('Unexpected problem occurred');
           }
         } else {
-          return of(returnedError);
+          return of(error);
         }
       })
     );
