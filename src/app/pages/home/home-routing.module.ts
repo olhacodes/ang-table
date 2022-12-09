@@ -13,6 +13,7 @@ import { AdvertingComponent } from 'src/app/blocks/adverting/adverting.component
 import { NotificationsBlockComponent } from './blocks/notifications/notifications-block.component';
 import { LastViewedBlockComponent } from 'src/app/blocks/last-viewed-block/last-viewed-block.component';
 import { OrdersBlockComponent } from './blocks/orders-block/orders-block.component';
+import { ServiceTiketsBlockComponent } from './blocks/service-tikets-block/service-tikets-block.component';
 //components
 import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
@@ -70,7 +71,8 @@ const routes: Routes = [
     IstaledBaseComponent,
     NotificationsBlockComponent,
     OrdersBlockComponent,
-    TableComponent
+    TableComponent,
+    ServiceTiketsBlockComponent
   ]
 })
 export class HomeRoutingModule { }

@@ -29,3 +29,14 @@ interface IOrders {
     progress: number;
     total: number;
 }
+
+interface IServiceTikets {
+    id: string;
+    status: string;
+    number: number;
+    date: string;
+    title: string;
+    custNumber: number;
+    progress: number;
+    total: number;
+}

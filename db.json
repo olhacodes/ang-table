@@ -168,5 +168,57 @@
             "progress": 90,
             "total": 14089
         }
+    ],
+    "serviceTikets": [
+        {
+            "id": "1",
+            "status": "error",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "serviceTikets Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 74,
+            "total": 14089
+        },
+        {
+            "id": "2",
+            "status": "success",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "serviceTikets Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 54,
+            "total": 14089
+        },
+        {
+            "id": "3",
+            "status": "warning",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "serviceTikets Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 20,
+            "total": 14089
+        },
+        {
+            "id": "4",
+            "status": "error",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "serviceTikets Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 100,
+            "total": 14089
+        },
+        {
+            "id": "5",
+            "status": "success",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "serviceTikets Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 90,
+            "total": 14089
+        }
     ]
 }

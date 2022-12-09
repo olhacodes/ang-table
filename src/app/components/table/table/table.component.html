@@ -1,4 +1,5 @@
 <table class="Table" *ngIf="tableData.length">
+  <app-table-title [title]="title" [icon]="icon"></app-table-title>
     <tr class="Table__label">
       <ng-container *ngFor="let label of tableLabels">
         <th id="number" class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort('number')">{{label}}

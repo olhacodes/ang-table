@@ -1,5 +1,4 @@
 @import 'src/styles/colors.scss';
-@import 'src/styles/global-classes.scss';
 
 :host {
     display: flex;
@@ -17,12 +16,6 @@
         position: absolute;
         right: 0;
         top: -60%;
-    }
-
-    &__notification {
-        display: flex;
-        gap: 0.75rem;
-        align-items: center;
     }
 
     &__status {

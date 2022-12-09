@@ -12,7 +12,10 @@ export class TableComponent implements OnInit {
   tableLabels = ['Status', "Number", 'Creation Date', 'Title', 'Cust. Number', 'Status', "Total"];
   tableData: any[];
   filteredTable: any[];
-  rotateSortIcon: boolean = false; 
+  rotateSortIcon: boolean = false;
+
+  @Input() title: string;
+  @Input() icon: string
 
   ngOnInit(): void {
   }
@@ -25,5 +28,4 @@ export class TableComponent implements OnInit {
     this.filteredTable = this.filteringService.onSortTable(field, this.tableData)
     this.rotateSortIcon = this.filteringService.isSorted
   }
-
 }
