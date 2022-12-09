@@ -1,5 +1,5 @@
-@import 'src/styles/mixins.scss';
 @import 'src/styles/colors.scss';
+@import 'src/styles/global-classes.scss';
 
 :host {
     display: flex;
@@ -9,12 +9,14 @@
 }
 
 .card {
-    padding: 1rem;
+    padding: 3.18rem;
+    border-radius: 0.9rem;
+    width: 26.5rem;
 
     &__icon {
         position: absolute;
         right: 0;
-        top: 0%;
+        top: -60%;
     }
 
     &__notification {
@@ -32,10 +34,4 @@
         gap: 0.9375rem;
         align-items: baseline;
     }
-}
-
-::ng-deep .progress {
-    background-color: $grey-light;
-    width: 3.125rem;
-    height: 0.3125rem;
 }

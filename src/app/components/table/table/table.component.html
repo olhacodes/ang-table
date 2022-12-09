@@ -9,10 +9,10 @@
     </tr>
     <tr *ngFor="let row of tableData" class="Table__row">
         <td>
-            <!-- <app-flag-icon [status]="row.status"></app-flag-icon> -->
+            <app-flag-icon [status]="row.status"></app-flag-icon>
         </td>
         <td>
-            <a class="link-number"[routerLink]="['product', row.number]">{{row.number}}</a>
+            <a class="link-number"[routerLink]="['product', row.number]">{{row.number}}</a> 
         </td>
         <td>{{row.date}}</td>
         <td>{{row.title}}</td>
