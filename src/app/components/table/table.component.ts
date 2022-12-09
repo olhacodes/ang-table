@@ -10,21 +10,21 @@ export class TableComponent implements OnInit {
   constructor(private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
-  tableData: ITable[];
-  filteredTable: ITable[];
+  tableData: any[];
+  filteredTable: any[];
 
   statuses: string[];
   descriptions: string[];
   selectedDesk: string;
-  selectedStatus: string;
+  selectedStatus: string; 
 
-  @Input() rotateSortIcon: boolean = false; 
+  rotateSortIcon: boolean = false; 
   
   ngOnInit() {
 
   }
   
-  @Input() set setTableData(data: ITable[]) {
+  @Input() set setTableData(data: any[]) {
     this.tableData = data;
     this.filteredTable = this.tableData
    
