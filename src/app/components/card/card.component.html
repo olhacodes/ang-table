@@ -14,11 +14,11 @@
         <span class="card__date">{{card.instalDate}}</span>
     </div>
     <div class="card__body border-dashed py-3">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+        {{card.description}}
     </div>
     <div class="card__progress border-dashed py-2 d-flex">
         <ngb-progressbar type="primary" [value]="75"></ngb-progressbar>
-        <span class="card__price">{{card.number | currency: 'EUR'}}</span>
+        <span class="card__price">{{card.price | currency: 'EUR'}}</span>
     </div>
     <div class="card__footer py-3">
         <app-button [btnClass]="'primarily'" [value]="'More'"></app-button>

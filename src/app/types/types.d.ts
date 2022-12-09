@@ -8,3 +8,12 @@ interface ITable {
     lastService: string;
     nbComponents: number;
 }
+
+interface INotifications {
+    id: string;
+    status: string;
+    number: number;
+    instalDate: string;
+    description: string;
+    price: number;
+}

@@ -1,4 +1,4 @@
-<div class="Table__dropdown">
+<div class="Table__dropdown" [ngClass]="statuses.length <= 1 ? 'Table__dropdown--hide' : ''">
   <select [(ngModel)]="selectedStatus" (ngModelChange)="onSelect(selectedStatus, 'status')">
     <option *ngFor="let option of statuses"> 
       {{ option }}
@@ -12,7 +12,7 @@
   </select>
 </div>
 
-<table class="Table">
+<table class="Table" *ngIf="filteredTable.length">
     <tr class="Table__label">
       <ng-container *ngFor="let label of tableLabels">
         <th id="number" class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort('number')">{{label}}

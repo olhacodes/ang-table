@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   constructor() { }
-  @Input() cardData: ITable[];
+  @Input() cardData: INotifications[];
 
   ngOnInit() {
    
