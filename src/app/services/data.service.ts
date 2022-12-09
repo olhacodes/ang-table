@@ -14,6 +14,9 @@ export class DataService {
   public notificationsDataSource: BehaviorSubject<INotifications[]> = new BehaviorSubject([]);
   public notificationsData: Observable<INotifications[]> = this.notificationsDataSource.asObservable();
 
+  public ordersDataSource: BehaviorSubject<IOrders[]> = new BehaviorSubject([]);
+  public ordersData: Observable<IOrders[]> = this.ordersDataSource.asObservable();
+
   constructor(private http: HttpClient) { }
 
   onLoadData(url: string, data: BehaviorSubject<any> = new BehaviorSubject([])) {
@@ -28,5 +31,9 @@ export class DataService {
 
   loadNotificationData() {
     this.onLoadData(environment.notificationsUrl, this.notificationsDataSource)
+  }
+
+  loadOrdersData() {
+    this.onLoadData(environment.ordersUrl, this.ordersDataSource)
   }
 }

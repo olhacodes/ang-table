@@ -68,7 +68,8 @@
             "number": 2013,
             "description": "Some notification 1 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 74,
+            "total": 14089
         },
         {
             "id": "2",
@@ -76,7 +77,8 @@
             "number": 2013,
             "description": "Some notification 2 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 56,
+            "total": 14089
         },
         {
             "id": "3",
@@ -84,7 +86,8 @@
             "number": 2013,
             "description": "Some notification 3 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 30,
+            "total": 14089
         },
         {
             "id": "4",
@@ -92,7 +95,8 @@
             "number": 2013,
             "description": "Some notification 4 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 100,
+            "total": 14089
         },
         {
             "id": "5",
@@ -100,7 +104,8 @@
             "number": 2013,
             "description": "Some notification 5 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 10,
+            "total": 14089
         },
         {
             "id": "6",
@@ -108,7 +113,60 @@
             "number": 2013,
             "description": "Some notification 6 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
             "instalDate": "Sep 13, 2022",
-            "price": 12343
+            "progress": 74,
+            "total": 14089
+        }
+    ],
+    "orders": [
+        {
+            "id": "1",
+            "status": "error",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "ORDERS Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 74,
+            "total": 14089
+        },
+        {
+            "id": "2",
+            "status": "success",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "ORDERS Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 54,
+            "total": 14089
+        },
+        {
+            "id": "3",
+            "status": "warning",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "ORDERS Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 20,
+            "total": 14089
+        },
+        {
+            "id": "4",
+            "status": "error",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "ORDERS Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 100,
+            "total": 14089
+        },
+        {
+            "id": "5",
+            "status": "success",
+            "number": 3203,
+            "date": "Sep 13, 2022",
+            "title": "ORDERS Ipsum Dolor sit amet consetur sadispiscing",
+            "custNumber": 95387698,
+            "progress": 90,
+            "total": 14089
         }
     ]
 }

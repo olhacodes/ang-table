@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-instaled-base-table',
+  templateUrl: './instaled-base-table.component.html',
+  styleUrls: ['./instaled-base-table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class InstaledBaseTableComponent implements OnInit {
   constructor(private filteringService: FilteringDataService) { }
 
   tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']

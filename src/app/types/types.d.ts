@@ -15,5 +15,17 @@ interface INotifications {
     number: number;
     instalDate: string;
     description: string;
-    price: number;
+    progress: number;
+    total: number;
+}
+
+interface IOrders {
+    id: string;
+    status: string;
+    number: number;
+    date: string;
+    title: string;
+    custNumber: number;
+    progress: number;
+    total: number;
 }

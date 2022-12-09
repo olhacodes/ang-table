@@ -10,8 +10,9 @@ import { HomeComponent } from './home.component';
 //blocks
 import { TableBlockComponent } from '../istaled-base/table-block/table-block.component';
 import { AdvertingComponent } from 'src/app/blocks/adverting/adverting.component';
-import { NotificationsBlockComponent } from '../home/blocks/notifications-block.component';
+import { NotificationsBlockComponent } from './blocks/notifications/notifications-block.component';
 import { LastViewedBlockComponent } from 'src/app/blocks/last-viewed-block/last-viewed-block.component';
+import { OrdersBlockComponent } from './blocks/orders-block/orders-block.component';
 //components
 import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
@@ -21,9 +22,10 @@ import { FlagIconComponent } from 'src/app/components/icons/flag-icon/flag-icon.
 import { IconStarComponent } from 'src/app/components/icons/icon-star/icon-star.component';
 import { RadioButtonComponent } from 'src/app/components/icons/radio-button/radio-button.component';
 import { TableTitleComponent } from 'src/app/components/table/table-title/table-title.component';
-import { TableComponent } from 'src/app/components/table/table.component';
+import { InstaledBaseTableComponent } from 'src/app/components/table/instaled-base-table/instaled-base-table.component';
 //microservices
 import { SideNavigationComponent } from 'src/app/microservices/side-navigation/side-navigation.component';
+import { TableComponent } from 'src/app/components/table/table/table.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -52,7 +54,7 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [
     HomeComponent,
-    TableComponent,
+    InstaledBaseTableComponent,
     TableTitleComponent,
     RadioButtonComponent,
     CardComponent,
@@ -66,7 +68,9 @@ const routes: Routes = [
     AdvertingComponent,
     ButtonComponent,
     IstaledBaseComponent,
-    NotificationsBlockComponent
+    NotificationsBlockComponent,
+    OrdersBlockComponent,
+    TableComponent
   ]
 })
 export class HomeRoutingModule { }

@@ -17,8 +17,8 @@
         {{card.description}}
     </div>
     <div class="card__progress border-dashed py-2 d-flex">
-        <ngb-progressbar type="primary" [value]="75"></ngb-progressbar>
-        <span class="card__price">{{card.price | currency: 'EUR'}}</span>
+        <ngb-progressbar type="primary" [value]="card.progress"></ngb-progressbar>
+        <span class="card__price">{{card.total | currency: 'EUR'}}</span>
     </div>
     <div class="card__footer py-3">
         <app-button [btnClass]="'primarily'" [value]="'More'"></app-button>

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   instaledBaseUrl: 'http://localhost:3000/instaledBase',
-  notificationsUrl: 'http://localhost:3000/notifications'
+  notificationsUrl: 'http://localhost:3000/notifications',
+  ordersUrl: 'http://localhost:3000/orders'
 };
 
 /*
