@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //pages
 import { IstaledBaseComponent } from '../istaled-base/istaled-base.component';
+import { InstaledBaseModule } from '../istaled-base/instaled-base.module';
 import { HomeComponent } from './home.component';
 //blocks
 import { TableBlockComponent } from '../istaled-base/table-block/table-block.component';
@@ -30,9 +31,6 @@ import { TableComponent } from 'src/app/components/table/table/table.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'instaled-base', 
-  loadChildren: () => import('../istaled-base/instaled-base-routing.module')
-      .then(m => m.InstaledBaseRoutingModule)},
   {path: 'contact', 
   loadChildren: () => import('../contact/contact.module')
       .then(m => m.ContactModule)},
@@ -67,6 +65,7 @@ const routes: Routes = [
     NgbModule,
     FormsModule,
     CommonModule, 
+    InstaledBaseModule
   ],
   exports: [RouterModule],
   declarations: [
