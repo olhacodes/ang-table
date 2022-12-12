@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class TableBlockComponent implements OnInit {
   tableData: Observable<ITable[]> = this.dataService.instaledBaseData;
   
-  constructor(private dataService: DataService,) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }

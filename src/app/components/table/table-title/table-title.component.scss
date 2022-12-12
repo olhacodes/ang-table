@@ -1,0 +1,28 @@
+@import 'src/styles/colors.scss';
+
+.table-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.81rem;
+
+    &:last-child {
+       right: 0;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 0.90rem;
+    }
+}
+
+a {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: '\276F';
+        color: $blue-color;
+        padding-left: 0.909rem;
+    }
+}

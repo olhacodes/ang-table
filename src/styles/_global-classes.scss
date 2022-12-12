@@ -1,14 +1,6 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/variables.scss';
 
-@mixin h4 {
-    color: $grey-dark-color;
-    line-height: 0.8125rem;
-    letter-spacing: 0.125rem;
-    margin: 0;
-    font-size: 0.6875rem;
-}
-
 @mixin link-number {
     color: $blue-color;
     font-weight: 700;
@@ -30,12 +22,25 @@ h1 {
     margin: 0
 }
 
-h4 {
-    @include h4;
+.h4 {
+    color: $grey-dark-color!important;
+    line-height: 0.8125rem!important;
+    letter-spacing: 0.125rem!important;
+    margin: 0!important;
+    font-size: 1rem!important;
+}
+
+a {
+    color: $blue-color!important;
+    text-decoration: none!important;
 }
 
 .link-number {
     @include link-number;
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .border-dashed {
@@ -48,4 +53,17 @@ h4 {
         bottom: 0;
         left: 0;
     }
+}
+
+.service-title {
+    display: flex;
+    gap: 1.077rem;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+::ng-deep .progress {
+    background-color: $grey-light;
+    width: 3.125rem;
+    height: 0.3125rem;
 }

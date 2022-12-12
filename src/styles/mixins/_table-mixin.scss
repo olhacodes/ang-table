@@ -1,0 +1,90 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/variables.scss';
+
+@mixin table {
+    text-align: left;
+    margin: 0 auto;
+    padding: 3.18rem;
+    background-color: $white-color;
+    border-radius: 0.90rem;
+    border-collapse: unset;
+    border-spacing: 2.18rem;
+    position: relative;
+    display: inline-grid;
+}
+
+@mixin label {
+    color: $grey-color;
+    position: relative;
+    display: inline-table;
+    padding-right: 8rem;
+ 
+    &::after {
+        content: '';
+        width: 100%;
+        border-bottom: 0.0625rem solid $grey-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@mixin label-item {
+    font-weight: 400;
+    width: fit-content;
+    white-space: nowrap;
+
+    &:nth-child(2) {
+        display: flex;
+        gap: 0.90rem;
+        cursor: pointer;
+        align-items: baseline;
+        width: 6.909rem;
+    }
+
+    &:nth-child(4) {
+        width: 45%;
+    }
+
+    &:nth-child(6) {
+        width: 15%;
+    }
+
+    &:nth-child(7) {
+        text-align: right;
+    }
+}
+
+@mixin table-row {
+    position: relative;
+    &::after {
+        content: '';
+        width: 100%;
+        border-bottom: $border-dashed;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    > td {
+        white-space: nowrap;
+        &:nth-child(2) {
+           width: 6.909rem;
+        }
+        &:nth-child(7) {
+            text-align: right;
+        }
+        &:last-child {
+            padding-left: 7.27rem;
+        }
+    }
+}
+
+@mixin table-action {
+    &::after {
+        content: '\2807';
+        font-size: 1rem;
+        color: $blue-color;
+        cursor: pointer;
+    }
+}

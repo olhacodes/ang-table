@@ -14,6 +14,12 @@ export class DataService {
   public notificationsDataSource: BehaviorSubject<INotifications[]> = new BehaviorSubject([]);
   public notificationsData: Observable<INotifications[]> = this.notificationsDataSource.asObservable();
 
+  public ordersDataSource: BehaviorSubject<IOrders[]> = new BehaviorSubject([]);
+  public ordersData: Observable<IOrders[]> = this.ordersDataSource.asObservable();
+
+  public serviceTiketsDataSource: BehaviorSubject<IServiceTikets[]> = new BehaviorSubject([]);
+  public serviceTiketsData: Observable<IServiceTikets[]> = this.serviceTiketsDataSource.asObservable();
+
   constructor(private http: HttpClient) { }
 
   onLoadData(url: string, data: BehaviorSubject<any> = new BehaviorSubject([])) {
@@ -23,10 +29,18 @@ export class DataService {
   }
 
   loadInstaledBaseData() {
-    this.onLoadData(environment.instaledBaseUrl, this.instaledBaseDataSource)
+    this.onLoadData(`${environment.baseUrl}/instaledBase`, this.instaledBaseDataSource)
   }
 
   loadNotificationData() {
-    this.onLoadData(environment.notificationsUrl, this.notificationsDataSource)
+    this.onLoadData(`${environment.baseUrl}/notifications`, this.notificationsDataSource)
+  }
+
+  loadOrdersData() {
+    this.onLoadData(`${environment.baseUrl}/orders`, this.ordersDataSource)
+  }
+
+  loadserviceTiketsData() {
+    this.onLoadData(`${environment.baseUrl}/serviceTikets`, this.serviceTiketsDataSource)
   }
 }

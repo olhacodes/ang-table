@@ -1,0 +1,30 @@
+<table class="Table" *ngIf="tableData.length">
+  <app-table-title [title]="title" [icon]="icon" [route]="route"></app-table-title>
+  <tr class="Table__label">
+    <ng-container *ngFor="let label of tableLabels">
+      <th id="number" class="Table__label-item" *ngIf="label === 'Number'" (click)="onSort('number')">{{label}}
+        <img [ngClass]="rotateSortIcon ? 'rotate' : ''" *ngIf="label === 'Number'" src="../../../assets/images/arrow-down.svg" alt="arrow-down">
+      </th>
+      <th *ngIf="label === ''"><app-flag-icon></app-flag-icon></th>
+      <th *ngIf="label !== 'Number' && label !== ''" class="Table__label-item">{{label}}</th>
+    </ng-container>
+  </tr>
+  <tr *ngFor="let row of tableData" class="Table__row">
+    <td>
+        <app-flag-icon [status]="row.status"></app-flag-icon>
+    </td>
+    <td>
+        <a class="link-number"[routerLink]="[route, row.number]">{{row.number}}</a> 
+    </td>
+    <td>{{row.date}}</td>
+    <td>{{row.title}}</td>
+    <td>{{row.custNumber}}</td>
+    <td>
+      <ngb-progressbar type="primary" [value]="row.progress"></ngb-progressbar>
+    </td>
+    <td>{{row.total | currency: 'EUR'}}</td>
+  <td>
+    <div class="Table__action"></div>
+  </td>
+</tr>
+</table>

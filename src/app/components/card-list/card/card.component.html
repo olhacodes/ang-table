@@ -3,9 +3,9 @@
         <div class="card__icon">
             <app-icon-star></app-icon-star>
         </div>
-        <div class="card__notification py-3">
+        <div class="service-title">
             <img src="../../../assets/images/notification-icon.svg" alt="NOTIFICATION">
-            <h4>NOTIFICATION</h4>
+            <h4 class="h4">NOTIFICATION</h4>
         </div>
     </div>
     <div class="card__status border-dashed py-3">
@@ -17,8 +17,8 @@
         {{card.description}}
     </div>
     <div class="card__progress border-dashed py-2 d-flex">
-        <ngb-progressbar type="primary" [value]="75"></ngb-progressbar>
-        <span class="card__price">{{card.price | currency: 'EUR'}}</span>
+        <ngb-progressbar type="primary" [value]="card.progress"></ngb-progressbar>
+        <span class="card__price">{{card.total | currency: 'EUR'}}</span>
     </div>
     <div class="card__footer py-3">
         <app-button [btnClass]="'primarily'" [value]="'More'"></app-button>

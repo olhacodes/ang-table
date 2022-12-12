@@ -1,0 +1,21 @@
+@import 'src/styles/mixins/table-mixin.scss';
+
+.Table {
+    @include table;
+
+    &__label {
+        @include label;
+
+        &-item {
+            @include label-item;
+        }
+    }
+
+    &__row {
+        @include table-row; 
+    }
+
+    &__action {
+        @include table-action;
+    }
+}

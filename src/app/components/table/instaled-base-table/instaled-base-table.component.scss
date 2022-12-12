@@ -1,6 +1,6 @@
 @import 'src/styles/colors.scss';
 @import 'src/styles/variables.scss';
-@import 'src/styles/mixins.scss';
+@import 'src/styles/mixins/table-mixin.scss';
 
 $table-border-color: rgb(240, 237, 237);
 $image-width: 2.5rem;
@@ -10,14 +10,7 @@ $number-icon-width: 0.9375rem;
 $dropdown-width: 6.25rem;
 
 .Table {
-    text-align: left;
-    width: 100%;
-    margin: 0 auto;
-    display: table;
-    padding: 0.8125rem 2.1875rem 2.1875rem;
-    background-color: $white-color;
-    border-radius: 0.625rem;
-    border-collapse: unset;
+    @include table;
 
     &__dropdown {
         display: flex;
@@ -33,43 +26,15 @@ $dropdown-width: 6.25rem;
     }
 
     &__label {
-        color: $grey-color;
-        position: relative;
-        &::after {
-            content: '';
-            width: 100%;
-            border-bottom: 0.0625rem solid $grey-color;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
+        @include label;
 
         &-item {
-            padding: 0.9375rem 0;
-            font-weight: 400;
-
-            &:nth-child(3) {
-                display: flex;
-                gap: 0.625rem;
-                cursor: pointer;
-            }
+            @include label-item;
         }
     }
 
     &__row {
-        position: relative;
-    &::after {
-        content: '';
-        width: 100%;
-        border-bottom: $border-dashed;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    } 
-    
-    > td {
-        padding: 0.9375rem 0;
-    }
+        @include table-row; 
     }
     
     &__description {
@@ -94,16 +59,9 @@ $dropdown-width: 6.25rem;
         }
     }
 
-    &__action::after {
-        content: '\2807';
-        font-size: 1rem;
-        color: $blue-color;
-        cursor: pointer;
+    &__action {
+        @include table-action;
     }
-}
-
-.rotate {
-    transform: rotate(180deg);
 }
 
 select {

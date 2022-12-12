@@ -2,29 +2,29 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FilteringDataService } from 'src/app/services/filtering.service';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'app-instaled-base-table',
+  templateUrl: './instaled-base-table.component.html',
+  styleUrls: ['./instaled-base-table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class InstaledBaseTableComponent implements OnInit {
   constructor(private filteringService: FilteringDataService) { }
 
-  tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
-  tableData: ITable[];
-  filteredTable: ITable[];
+  tableLabels = ['Status', '', 'Number', 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
+  tableData: any[];
+  filteredTable: any[];
 
   statuses: string[];
   descriptions: string[];
   selectedDesk: string;
-  selectedStatus: string;
+  selectedStatus: string; 
 
-  @Input() rotateSortIcon: boolean = false; 
+  rotateSortIcon: boolean = false; 
   
   ngOnInit() {
 
   }
   
-  @Input() set setTableData(data: ITable[]) {
+  @Input() set setTableData(data: any[]) {
     this.tableData = data;
     this.filteredTable = this.tableData
    
