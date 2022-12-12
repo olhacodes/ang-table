@@ -30,6 +30,11 @@ h1 {
     font-size: 1rem!important;
 }
 
+a {
+    color: $blue-color!important;
+    text-decoration: none!important;
+}
+
 .link-number {
     @include link-number;
 }

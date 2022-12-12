@@ -42,6 +42,22 @@ const routes: Routes = [
   {path: 'product/:id', 
       loadChildren:() => import('../product/product.module')
       .then(m => m.ProductModule)
+  },
+  {path: 'orders', 
+      loadChildren:() => import('../orders/orders.module')
+      .then(m => m.OrdersModule)
+  },
+  {path: 'orders/:id', 
+      loadChildren:() => import('../orders/orders.module')
+      .then(m => m.OrdersModule)
+  },
+  {path: 'service-tikets', 
+      loadChildren:() => import('../service-tikets/service-tikets.module')
+      .then(m => m.ServiceTiketsModule)
+  },
+  {path: 'service-tikets/:id', 
+      loadChildren:() => import('../service-tikets/service-tikets.module')
+      .then(m => m.ServiceTiketsModule)
   }
 ];
 

@@ -29,18 +29,18 @@ export class DataService {
   }
 
   loadInstaledBaseData() {
-    this.onLoadData(environment.instaledBaseUrl, this.instaledBaseDataSource)
+    this.onLoadData(`${environment.baseUrl}/instaledBase`, this.instaledBaseDataSource)
   }
 
   loadNotificationData() {
-    this.onLoadData(environment.notificationsUrl, this.notificationsDataSource)
+    this.onLoadData(`${environment.baseUrl}/notifications`, this.notificationsDataSource)
   }
 
   loadOrdersData() {
-    this.onLoadData(environment.ordersUrl, this.ordersDataSource)
+    this.onLoadData(`${environment.baseUrl}/orders`, this.ordersDataSource)
   }
 
   loadserviceTiketsData() {
-    this.onLoadData(environment.serviceTiketsUrl, this.serviceTiketsDataSource)
+    this.onLoadData(`${environment.baseUrl}/serviceTikets`, this.serviceTiketsDataSource)
   }
 }

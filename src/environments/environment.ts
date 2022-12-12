@@ -4,10 +4,7 @@
 
 export const environment = {
   production: false,
-  instaledBaseUrl: 'http://localhost:3000/instaledBase',
-  notificationsUrl: 'http://localhost:3000/notifications',
-  ordersUrl: 'http://localhost:3000/orders',
-  serviceTiketsUrl: 'http://localhost:3000/serviceTikets'
+  baseUrl: 'http://localhost:3000'
 };
 
 /*

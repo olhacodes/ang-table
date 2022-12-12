@@ -21,7 +21,7 @@ export class FlagIconComponent implements OnInit {
       case 'error': this.status = 'error';
       this.status ='#FF5555';
       break;
-      default: 'none';
+      default:  this.status = '#B6B6B6';
     }
   }
 }

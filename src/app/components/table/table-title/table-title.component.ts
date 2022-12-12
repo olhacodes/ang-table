@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TableTitleComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
+  @Input() route: string;
  
   constructor() { }
 

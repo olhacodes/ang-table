@@ -9,13 +9,14 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
 export class TableComponent implements OnInit {
   constructor(private filteringService: FilteringDataService) { }
 
-  tableLabels = ['Status', "Number", 'Creation Date', 'Title', 'Cust. Number', 'Status', "Total"];
+  tableLabels = ['', 'Number', 'Creation Date', 'Title', 'Cust. Number', 'Status', 'Total'];
   tableData: any[];
   filteredTable: any[];
   rotateSortIcon: boolean = false;
 
   @Input() title: string;
   @Input() icon: string
+  @Input() route: string;
 
   ngOnInit(): void {
   }

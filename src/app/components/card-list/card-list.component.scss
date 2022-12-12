@@ -16,5 +16,10 @@
 }
 
 ::ng-deep .carousel-control-prev {
-    left: 88%;
+    left: 90%;
+    transform: rotate(0deg);
+}
+
+::ng-deep .carousel-control-next {
+    left: 95%;
 }

@@ -9,7 +9,7 @@ import { FilteringDataService } from 'src/app/services/filtering.service';
 export class InstaledBaseTableComponent implements OnInit {
   constructor(private filteringService: FilteringDataService) { }
 
-  tableLabels = ['Status', '', "Number", 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
+  tableLabels = ['Status', '', 'Number', 'Description', 'Instal. Date', 'Last service', 'Nb. Components']
   tableData: any[];
   filteredTable: any[];
 
