@@ -1,5 +1,8 @@
 <div class="app">
     <div class="app__container">
+        <ng-container *ngIf="error | async">
+            <app-alert [type]="'danger'" [message]="errorMessage | async"></app-alert>
+        </ng-container>        
         <router-outlet></router-outlet>
         <app-footer></app-footer>
     </div>

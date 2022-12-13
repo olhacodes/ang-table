@@ -8,6 +8,7 @@ import { AlertComponent } from './alert.component';
   imports: [
     CommonModule,
     NgbAlertModule
-  ]
+  ],
+  exports: [AlertComponent]
 })
 export class AlertModule { }

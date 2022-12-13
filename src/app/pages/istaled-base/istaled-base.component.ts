@@ -1,7 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import {DataService} from 'src/app/services/data.service'
-import { ErrorMessageService } from 'src/app/services/error-message.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-istaled-base',
@@ -9,16 +6,9 @@ import { ErrorMessageService } from 'src/app/services/error-message.service';
   styleUrls: ['./istaled-base.component.scss']
 })
 export class IstaledBaseComponent implements OnInit {
-  @Input() errorMessage: Observable<string>;
-  @Input() error:  Observable<boolean>;
-
-  constructor(private dataService: DataService, private errorMessageService: ErrorMessageService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.dataService.loadInstaledBaseData()
-    this.dataService.loadNotificationData()
-
-    this.errorMessage = this.errorMessageService.message.asObservable()
-    this.error = this.errorMessageService.error.asObservable()
+    
   }
 }

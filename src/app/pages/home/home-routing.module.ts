@@ -16,7 +16,6 @@ import { LastViewedBlockComponent } from 'src/app/blocks/last-viewed-block/last-
 import { OrdersBlockComponent } from './blocks/orders-block/orders-block.component';
 import { ServiceTiketsBlockComponent } from './blocks/service-tikets-block/service-tikets-block.component';
 //components
-import { AlertComponent } from 'src/app/components/alert/alert.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { CardListComponent } from 'src/app/components/card-list/card-list.component';
 import { CardComponent } from 'src/app/components/card-list/card/card.component';
@@ -81,7 +80,6 @@ const routes: Routes = [
     CardListComponent,
     IconStarComponent,
     FlagIconComponent,
-    AlertComponent,
     SideNavigationComponent,
     TableBlockComponent,
     AdvertingComponent,
