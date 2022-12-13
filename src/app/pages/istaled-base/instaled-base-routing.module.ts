@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IstaledBaseComponent } from './istaled-base.component';
 
 const routes: Routes = [
-    {path: 'instaled-base', component: IstaledBaseComponent},
+    {path: '', component: IstaledBaseComponent},
   ];
 
 @NgModule({

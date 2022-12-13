@@ -8,16 +8,16 @@ import {environment} from 'src/environments/environment';
   providedIn: 'root'
 })
 export class DataService {
-  public instaledBaseDataSource: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
+  private instaledBaseDataSource: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
   public instaledBaseData: Observable<ITable[]> = this.instaledBaseDataSource.asObservable();
 
-  public notificationsDataSource: BehaviorSubject<INotifications[]> = new BehaviorSubject([]);
+  private notificationsDataSource: BehaviorSubject<INotifications[]> = new BehaviorSubject([]);
   public notificationsData: Observable<INotifications[]> = this.notificationsDataSource.asObservable();
 
-  public ordersDataSource: BehaviorSubject<IOrders[]> = new BehaviorSubject([]);
+  private ordersDataSource: BehaviorSubject<IOrders[]> = new BehaviorSubject([]);
   public ordersData: Observable<IOrders[]> = this.ordersDataSource.asObservable();
 
-  public serviceTiketsDataSource: BehaviorSubject<IServiceTikets[]> = new BehaviorSubject([]);
+  private serviceTiketsDataSource: BehaviorSubject<IServiceTikets[]> = new BehaviorSubject([]);
   public serviceTiketsData: Observable<IServiceTikets[]> = this.serviceTiketsDataSource.asObservable();
 
   constructor(private http: HttpClient) { }
