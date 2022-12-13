@@ -31,6 +31,9 @@ import { TableComponent } from 'src/app/components/table/table/table.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'instaled-base', 
+  loadChildren: () => import('../istaled-base/instaled-base.module')
+      .then(m => m.InstaledBaseModule)},
   {path: 'contact', 
   loadChildren: () => import('../contact/contact.module')
       .then(m => m.ContactModule)},
